@@ -4,6 +4,10 @@
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link
+   rel="stylesheet"
+   href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+   />
    <title>SvipersMhd portfolio</title>
    <script src="https://kit.fontawesome.com/10664defb7.js" crossorigin="anonymous"></script>
    <link rel="stylesheet" href="css/styles.min.css">
@@ -17,9 +21,10 @@
          <div class="left">
             <div class="contact">
                <h3>contact</h3>
+               <div class="bar bar__first"></div>
             </div>
-            <div class="bar"></div>
-            <div class="home__project">
+            <div class="home__project"> 
+               <div class="bar bar__second"></div>
                <h3>My projects</h3>
             </div>
          </div>
@@ -33,7 +38,7 @@
             <h3 class="role">Front-End Développeur Web jnr</h3>
             <div class="presentation">
                <div class="presentation__photo">
-                  <img src="img/Snapchat-965035660.jpg" alt="">
+                  
                </div>
                <div class="presentation__txt">
                   Hey! Je suis Zohaib Muhammad, un développeur front-end junior passionné par la création de sites web esthétiques et fonctionnels.Je suis constamment à la recherche de nouvelles technologies à apprendre. Mon objectif est de devenir un développeur front-end expérimenté et de travailler sur des projets qui ont un impact positif sur les utilisateurs finaux.
@@ -51,7 +56,7 @@
             </div>
          </div>
       </section>
-      <section class="poject">
+      <section class="project" id="project">
          <nav>
             <a href="#home">Home</a>
          </nav>
@@ -59,7 +64,7 @@
          <div class="project__wrapper">
             <div class="project__box">
                <div class="project__box__screen">
-                  <img src="" alt="screen du projet training studio">
+                  <img src="img/training.jpg" alt="screen du projet training studio">
                </div>
                <div class="project__box__txt">
                   <h4>Training Studio</h4>
@@ -67,29 +72,29 @@
                      Site one page, responsive, copiée depuis un template. Fait en html, css, avec quelques animations en js. 
                   </p>
                   <div class="project__links">
-                     <a href=""></a>
-                     <a href=""></a>
+                     <a target="_blank" href=""><i class="fa-brands fa-github"></i></a>
+                     <a target="_blank" href="https://trainingstudio-perso-project.netlify.app/"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                   </div>
                </div>
             </div>
             <div class="project__box">
-               <div class="project__box__screen">
-                  <img src="" alt="screen du projet to do list">
-               </div>
                <div class="project__box__txt">
                   <h4>To do list</h4>
                   <p>
                      To do list, fait en html, css, js, animée avec gsap
                   </p>
                   <div class="project__links">
-                     <a href=""></a>
-                     <a href=""></a>
+                     <a target="_blank" href=""><i class="fa-brands fa-github"></i></a>
+                     <a target="_blank" href="https://todolistsvipersmhd.netlify.app/"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                   </div>
+               </div>
+               <div class="project__box__screen">
+                  <img src="img/todo.jpg" alt="screen du projet training studio">
                </div>
             </div>
             <div class="project__box">
                <div class="project__box__screen">
-                  <img src="" alt="screen du projet News">
+                  <img src="img/news.jpg" alt="screen du projet training studio">
                </div>
                <div class="project__box__txt">
                   <h4>News</h4>
@@ -97,86 +102,84 @@
                      Site de 5 pages, responsive, copiée depuis un template. Fait avec html, css.
                   </p>
                   <div class="project__links">
-                     <a href=""></a>
-                     <a href=""></a>
+                     <a target="_blank" href=""><i class="fa-brands fa-github"></i></a>
+                     <a target="_blank" href="https://newssvipersmhd.netlify.app/"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                   </div>
                </div>
             </div>
             <div class="project__box">
-               <div class="project__box__screen">
-                  <img src="" alt="screen du projet News">
-               </div>
                <div class="project__box__txt">
                   <h4>My deeze</h4>
                   <p>
                      Site utilisant l'api de deezer, Fait avec html, css, js.
                   </p>
                   <div class="project__links">
-                     <a href=""></a>
-                     <a href=""></a>
+                     <a target="_blank" href=""><i class="fa-brands fa-github"></i></a>
+                     <a target="_blank" href=""><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                   </div>
+               </div>
+               <div class="project__box__screen">
+                  <img src="img/training.jpg" alt="screen du projet training studio">
                </div>
             </div>
          </div>
-         <div class="small__project">
+         <div class="ask__scroll">
+            <i class="fa-solid fa-computer-mouse"></i>
+         </div>
+         <!-- <div class="small__project">
             <div class="swiper">
                <div class="swiper-wrapper">
-                  <!-- Slides -->
                   <div class="swiper-slide gazette">
                      <span>The Gazette</span>
                      <div class="project__links sp__hover">
-                        <a href=""></a>
-                        <a href=""></a>
+                        <a href=""><i class="fa-brands fa-github"></i></a>
+                        <a href=""><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                      </div>
                   </div>
                   <div class="swiper-slide makena">
                      <span>Makena</span>
                      <div class="project__links sp__hover">
-                        <a href=""></a>
-                        <a href=""></a>
+                        <a href=""><i class="fa-brands fa-github"></i></a>
+                        <a href=""><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                      </div>
                   </div>
                   <div class="swiper-slide molly">
                      Molly
                      <div class="project__links sp__hover">
-                        <a href=""></a>
-                        <a href=""></a>
+                        <a href=""><i class="fa-brands fa-github"></i></a>
+                        <a href=""><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                      </div>
                   </div>
                   <div class="swiper-slide sweet">
                      <span>Sweetcheecks</span>
                      <div class="project__links sp__hover">
-                        <a href=""></a>
-                        <a href=""></a>
+                        <a href=""><i class="fa-brands fa-github"></i></a>
+                        <a href=""><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                      </div>
                   </div>
                   <div class="swiper-slide maxpaw">
                      <span>Newsletter</span>
                      <div class="project__links sp__hover">
-                        <a href=""></a>
-                        <a href=""></a>
+                        <a href=""><i class="fa-brands fa-github"></i></a>
+                        <a href=""><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                      </div>
                   </div>
                   <div class="swiper-slide food52">
                      <span>Newsletter</span>
                      <div class="project__links sp__hover">
-                        <a href=""></a>
-                        <a href=""></a>
+                        <a href=""><i class="fa-brands fa-github"></i></a>
+                        <a href=""><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                      </div>
                   </div>
                </div>
-               <!-- If we need pagination -->
-               <div class="swiper-pagination"></div>
-               
-               <!-- If we need navigation buttons -->
                <div class="swiper-button-prev"></div>
                <div class="swiper-button-next"></div>
                
             </div>
-         </div>
-      </section>
+         </div> -->
+      </section> 
    </main>
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/9.1.1/swiper-bundle.min.js" integrity="sha512-J0i98QZsJc12MkNEyDbinrKKoe7Jiw0rtryAXBesZrVwRkaqgP9QNCPyo5sMZ2jfiJQb+9RIE4I3xNl8fFqQIA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+   <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
    <script src="js/main.js"></script>
 </body>

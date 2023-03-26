@@ -1,22 +1,22 @@
 .header {
-    display: flex;
-    justify-content: flex-end;
-    width: 95%;
-    padding: 20px 0;
     position: absolute;
+    right: 10%;
+    top: 30px;
 
     span {
         padding: 0 10px;
+        color: white;
+        text-shadow:  0px 0px 15px rgba(0, 0, 0, 0.673);
     }
 }
 .home {
     height: 100vh;
-    width: 100%;
     display: flex;
     justify-items: center;
     align-items: baseline;
     gap: 20px;
-}
+    background: $blanc;
+}   
 .left {
     display: flex;
     flex-direction: column;
@@ -33,9 +33,17 @@
         width: 100%;
         transition: .3s all ease-in-out;
         cursor: pointer;
+        position: relative;
+        background: #000;
 
         &:hover {
-            background: #00000048;
+            background: $blanc;
+        }
+        &:hover h3 {
+            color: black;
+        }
+        &:hover .bar__first, &:hover .bar__second{
+            background: black ;
         }
         
         h3 {
@@ -43,12 +51,25 @@
             font-size: $ff-cate;
             font-weight: bold;
             margin: 0;
+            color: white;
+            transition: .3s all ease-in-out;
+            font-family: $font;
+            font-weight: 900;
         } 
     }
     .bar {
         width: 80%;
-        height: 5px;
-        background: black;
+        height: 2px;
+        background: white;
+        position: absolute;
+        transition: all .3s ease-in-out;
+
+    }
+    .bar__first {
+        bottom: 0;
+    }
+    .bar__second {
+        top: 0;
     }
 }
 .right {
@@ -110,3 +131,31 @@
     }
 }
 
+
+@media screen and (max-width:900px) {
+
+    .home {
+        flex-direction: column;
+        height: auto;
+        width: auto;
+    }
+    .left, .right {
+        height: 100vh;
+    }
+    .left {
+        order: 2;
+        width: 100%;
+    }
+    .right {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        padding: 0 30px;
+
+        h1, .role  {
+            align-self: flex-start;
+        }
+    }
+}
