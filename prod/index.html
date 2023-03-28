@@ -13,13 +13,27 @@
    <link rel="stylesheet" href="css/styles.min.css">
 </head>
 <body>
+   <div class="wave__right wave">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+   </div>
+   <div class="wave__left wave">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+   </div>
    <header class="header">
       <span class="fran">Fr</span>|<span class="eng">En</span>
    </header>
    <main>
       <section class="home" id="home">
          <div class="left">
-            <div class="contact">
+            <div class="home__contact">
                <h3>contact</h3>
                <div class="bar bar__first"></div>
             </div>
@@ -35,31 +49,38 @@
                <span>a.k.a</span>
                <span>SvipersMhd</span>
             </h1>
-            <h3 class="role">Front-End Développeur Web jnr</h3>
             <div class="presentation">
                <div class="presentation__photo">
                   
                </div>
                <div class="presentation__txt">
-                  Hey! Je suis Zohaib Muhammad, un développeur front-end junior passionné par la création de sites web esthétiques et fonctionnels.Je suis constamment à la recherche de nouvelles technologies à apprendre. Mon objectif est de devenir un développeur front-end expérimenté et de travailler sur des projets qui ont un impact positif sur les utilisateurs finaux.
+                  <h3 class="role">Front-End Développeur Web jnr</h3>
+                  <p>
+                     Hey! Je suis Zohaib Muhammad, un développeur front-end junior passionné par la création de sites web esthétiques et fonctionnels. Je suis constamment à la recherche de nouvelles technologies à apprendre. Mon objectif est de devenir un développeur front-end expérimenté et de travailler sur des projets qui ont un impact positif sur les utilisateurs finaux.
+                  </p>
+                  <p>
+                     Je maîtrise les langages HTML, CSS et JavaScript, ainsi que la création de thèmes WordPress. J'ai également travaillé avec des outils tels que Gulp pour l'automatisation des tâches de développement. Récemment, j'ai commencé à explorer le framework Vue.js pour développer des applications frontales plus complexes. Je suis toujours motivé pour apprendre de nouvelles technologies et améliorer mes compétences pour créer des sites web de haute qualité et des expériences utilisateur optimales.
+                  </p>
                </div>
             </div>
             <div class="skills">
                <h3>Skills :</h3>
-               <span><i class="fa-brands fa-html5"></i></span>
-               <span><i class="fa-brands fa-css3-alt"></i></span>
-               <span><i class="fa-brands fa-sass"></i></span>
-               <span><i class="fa-brands fa-wordpress"></i></span>
-               <span><i class="fa-brands fa-js"></i></span>
-               <span><i class="fa-brands fa-vuejs"></i></span>
-               <span><i class="fa-brands fa-gulp"></i></span>
+               <div class="skills__wrapper">
+                  <span><i class="fa-brands fa-html5"></i></span>
+                  <span><i class="fa-brands fa-css3-alt"></i></span>
+                  <span><i class="fa-brands fa-sass"></i></span>
+                  <span><i class="fa-brands fa-wordpress"></i></span>
+                  <span><i class="fa-brands fa-js"></i></span>
+                  <span><i class="fa-brands fa-vuejs"></i></span>
+                  <span><i class="fa-brands fa-gulp"></i></span>
+               </div> 
             </div>
          </div>
       </section>
       <section class="project" id="project">
-         <nav>
-            <a href="#home">Home</a>
-         </nav>
+         <div class="project__homebtn">
+            <span  href="#">Home</span>
+         </div>
          <h2>My projects</h2>
          <div class="project__wrapper">
             <div class="project__box">
@@ -130,7 +151,7 @@
             <div class="ask__scroll">
                <i class="fa-solid fa-computer-mouse"></i>
             </div>
-            <div class="swiper headline">
+            <div class="swiper">
                <div class="swiper-wrapper">
                   <div class="swiper-slide gazette">
                      <div class="swiper__img">
@@ -212,9 +233,8 @@
          </div>
       </section> 
    </main>
-   <script src="https://unpkg.com/scrollreveal"></script>
    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
    <script src="js/main.min.js"></script>
 </body>
 </html>

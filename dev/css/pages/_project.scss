@@ -1,6 +1,7 @@
 .project {
-    // height: 120vh;
+    display: none;
     background: $blanc;
+    height: auto;
     
     h2 {
         width: 100%;
@@ -12,7 +13,7 @@
     }
 }
 
-nav {
+.project__homebtn {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -26,11 +27,11 @@ nav {
         background: white;
         box-shadow: 0px 0px 15px rgba(0,0,0,.1);
     }
-    &:hover a {
+    &:hover span {
         color: #000;
     }
     
-    a {
+    span {
         text-align: center;
         line-height: 70px;
         text-decoration: none;
@@ -119,7 +120,7 @@ nav {
     .ask__scroll {
         position: absolute;
         left: 50%;
-        top: 20%;
+        top: 15%;
         transform: translate(-50%, -50%);
         font-size: 1.5rem;
         animation: scrolling 1s infinite;
@@ -134,6 +135,23 @@ nav {
         100% {
             transform: translateY(0);
         }
+    }
+}
+.ask__scroll.isActive {
+    animation: scrollingOpacity 1s ;
+}
+@keyframes scrollingOpacity {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+        opacity: 0.5;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 0;
     }
 }
 .swiper {
