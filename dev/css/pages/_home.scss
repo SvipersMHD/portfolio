@@ -1,6 +1,4 @@
-body {
-    overflow-x: hidden;
-}
+
 .header {
     width: 90%;
     position: absolute;
@@ -9,14 +7,14 @@ body {
     padding: 20px 0;
     display: flex;
     justify-content: flex-end;
-
+    
     span {
         cursor: pointer;
         padding: 0 10px;
         font-family: $font;
         color: black;
         transition: .3s all ease-in-out;
-
+        
         &:hover {
             text-shadow:  0px 0px 15px rgba(0, 0, 0, 0.673);
         }
@@ -29,6 +27,7 @@ body {
     align-items: baseline;
     gap: 50px;
     background: $blanc;
+    overflow: hidden;
 }   
 .left {
     display: flex;
@@ -37,7 +36,7 @@ body {
     align-items: center;
     height: 100%;
     width: 50%;
-
+    
     .home__contact, .home__project {
         display: flex;
         justify-content: center;
@@ -48,7 +47,7 @@ body {
         cursor: pointer;
         position: relative;
         background: #000000ef;
-
+        
         &:hover {
             background: $blanc;
         }
@@ -76,7 +75,7 @@ body {
         background: white;
         position: absolute;
         transition: all .3s ease-in-out;
-
+        
     }
     .bar__first {
         bottom: 0;
@@ -90,16 +89,16 @@ body {
     width: 50%;
     font-family: $font;
     align-self: center;
-
+    
     h1 {
         margin: 0;
         margin-bottom: 50px;
         font-size: $ff-h1;
         text-transform: uppercase;
-
+        
         span {
             display: block;
-
+            
             &:nth-of-type(3) {
                 font-size: 20px;
                 margin: 10px 0;
@@ -112,7 +111,7 @@ body {
         margin: 0;
     }
     .presentation {
-
+        
         .presentation__photo {
             width: 30%;
             position: absolute;
@@ -123,13 +122,13 @@ body {
             }
         }
         .presentation__txt {
-                width: 80%;
-                padding: 20px 0 50px;
-                
-                p {
-                    line-height: 25px;
-                    text-align: justify;
-                }
+            width: 80%;
+            padding: 20px 0 50px;
+            
+            p {
+                line-height: 25px;
+                text-align: justify;
+            }
         }
     }
     .skills {
@@ -143,11 +142,11 @@ body {
             display: flex;
             flex-wrap: wrap;
             justify-content: flex-start;
-
+            
             span {
                 font-size: 30px;
                 padding: 15px;
-    
+                
                 &:nth-of-type(1) {
                     padding-left: 0;
                 }
@@ -155,11 +154,12 @@ body {
         }
     }
 }
-.wave__left, .wave__right {
-    height: 51%;
-    position: absolute;
+.wave {
+    display: none;
+    height: 51vh;
+    position: fixed;
     width: 100%;
-    z-index: 100;
+    z-index: 10;
     
     div {
         height: calc(100% / 5);
@@ -177,7 +177,7 @@ body {
 
 
 @media screen and (max-width:900px) {
-
+    
     .home {
         flex-direction: column;
         height: auto;
@@ -196,7 +196,7 @@ body {
         justify-content: center;
         align-items: center;
         padding: 50px 0;
-
+        
         h1, .role  {
             align-self: flex-start;
         }
@@ -209,13 +209,13 @@ body {
             
         }
         .skills {
-
+            
             h3 {
                 text-align: center;
                 margin: 0 auto;
                 font-size: $ff-h3;
                 padding-bottom: 20px;
-
+                
             }
             .skills__wrapper {
                 justify-content: center;
@@ -226,7 +226,7 @@ body {
         height: 100%;
         
         div {
-            height: calc(300% / 5);
+            height: calc(100% / 5);
         }
     }
     .wave__right {

@@ -21,6 +21,8 @@ const swiper = new Swiper('.swiper', {
 const askScroll = document.querySelector('.ask__scroll');
 const wavesL = [...document.querySelectorAll('.wave__left div')].reverse();
 const wavesR = document.querySelectorAll('.wave__right div');
+const wavesLWrapper = document.querySelector('.wave__left');
+const wavesRWrapper = document.querySelector('.wave__right');
 
 const btnProjectHome = document.querySelector('.home__project');
 const btnContact = document.querySelector('.home__contact');
@@ -46,7 +48,11 @@ function goProject(){
         project.style.display = "block";
         home.style.display = "none";
         header.style.display = "none";
+        if (window.innerWidth < 900) {
+            window.scrollTo(0, 0);
+        }
     }, 1000);
+
 }
 
 function goHome(){
@@ -54,28 +60,40 @@ function goHome(){
         project.style.display = "none";
         home.style.display = "flex";
         header.style.display = "block";
-    }, 900);
+    }, 1000);
+}
+function widthWaves(){
+    wavesLWrapper.style.display = "block";
+    wavesRWrapper.style.display = "block";
+    
+    
+    setTimeout(() => {
+        wavesLWrapper.style.display = "none";
+        wavesRWrapper.style.display = "none";
+        
+    }, 2000);
 }
 
 btnProjectHome.addEventListener("click", () => {
     animation();
     goProject();
+    widthWaves()
 });
 
 btnContact.addEventListener("click", () => {
     animation();
+    widthWaves();
 });
 
 homebtn.addEventListener("click", () => {
     animation();
     goHome()
+    widthWaves()
     askScroll.classList.remove('isActive')
     setTimeout(function() {
         askScroll.style.opacity = 1;
     }, 1000);
 });
-
-
 
 function animation() {
     gsap.to(wavesR, {
