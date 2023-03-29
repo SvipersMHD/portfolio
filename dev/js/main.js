@@ -32,8 +32,7 @@ const home = document.querySelector('.home');
 const header = document.querySelector('.header');
 const homebtn = document.querySelector('.project__homebtn');
 
-window.addEventListener('scroll', () => {
-    
+window.addEventListener('scroll', () => { 
     if (document.querySelector(".project")) {
         askScroll.classList.add('isActive')
     }
@@ -59,7 +58,7 @@ function goHome(){
     setTimeout(function() {
         project.style.display = "none";
         home.style.display = "flex";
-        header.style.display = "block";
+        header.style.display = "flex";
     }, 1000);
 }
 function widthWaves(){
@@ -73,28 +72,6 @@ function widthWaves(){
         
     }, 2000);
 }
-
-btnProjectHome.addEventListener("click", () => {
-    animation();
-    goProject();
-    widthWaves()
-});
-
-btnContact.addEventListener("click", () => {
-    animation();
-    widthWaves();
-});
-
-homebtn.addEventListener("click", () => {
-    animation();
-    goHome()
-    widthWaves()
-    askScroll.classList.remove('isActive')
-    setTimeout(function() {
-        askScroll.style.opacity = 1;
-    }, 1000);
-});
-
 function animation() {
     gsap.to(wavesR, {
         xPercent: -100, // Animer la position à 0 pour chaque élément
@@ -141,4 +118,25 @@ function animation() {
 }
 
 
+
+btnProjectHome.addEventListener("click", () => {
+    animation();
+    goProject();
+    widthWaves()
+});
+
+btnContact.addEventListener("click", () => {
+    animation();
+    widthWaves();
+});
+
+homebtn.addEventListener("click", () => {
+    animation();
+    goHome()
+    widthWaves()
+    askScroll.classList.remove('isActive')
+    setTimeout(function() {
+        askScroll.style.opacity = 1;
+    }, 1000);
+});
 
