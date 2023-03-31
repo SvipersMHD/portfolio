@@ -20,6 +20,9 @@
             text-shadow:  0px 0px 15px rgba(0, 0, 0, 0.673);
         }
     }
+    .fran.isActive, .eng.isActive {
+        text-shadow:  0px 0px 10px rgb(0, 0, 0);
+    }
 }
 .home {
     height: 100vh;
@@ -233,11 +236,23 @@
         height: 100%;
         
         div {
-            height: calc(100% / 5);
+            height: calc(100% / 10);
         }
     }
     .wave__right {
         right: -100%;
         top: 50%;
     }
+}
+.v-engl {
+    display: none;
+}
+.v-engl.isActive {
+    display: block;
+}
+.v-fr.isActive {
+    display: block;
+}
+.v-fr {
+    display: none;
 }

@@ -32,16 +32,14 @@ const home = document.querySelector('.home');
 const header = document.querySelector('.header');
 const homebtn = document.querySelector('.project__homebtn');
 
-window.addEventListener('scroll', () => { 
-    if (document.querySelector(".project")) {
-        askScroll.classList.add('isActive')
-    }
-    setTimeout(function() {
-        askScroll.style.opacity = 0;
-    }, 1000);
-});
+const linkToEnglish = document.querySelector(".eng");
+const linkToFrench = document.querySelector(".fran");
+const vFr = document.querySelectorAll(".v-fr");
+const vEng = document.querySelectorAll(".v-engl");
+const activeEng = document.querySelector('.v-engl .isActive');
 
 
+// animation vers la partie my project
 function goProject(){
     setTimeout(function() {
         project.style.display = "block";
@@ -51,9 +49,9 @@ function goProject(){
             window.scrollTo(0, 0);
         }
     }, 1000);
-
+    
 }
-
+// animation retour vers le home 
 function goHome(){
     setTimeout(function() {
         project.style.display = "none";
@@ -61,10 +59,10 @@ function goHome(){
         header.style.display = "flex";
     }, 1000);
 }
+// function pour cacher les waves 
 function widthWaves(){
     wavesLWrapper.style.display = "block";
     wavesRWrapper.style.display = "block";
-    
     
     setTimeout(() => {
         wavesLWrapper.style.display = "none";
@@ -72,6 +70,7 @@ function widthWaves(){
         
     }, 2000);
 }
+// animation des waves 
 function animation() {
     gsap.to(wavesR, {
         xPercent: -100, // Animer la position à 0 pour chaque élément
@@ -116,20 +115,36 @@ function animation() {
         }
     });
 }
+function changeFrToEng() {
+    vFr.forEach(function(versionFr) {
+        versionFr.classList.toggle("isActive");
+    });
+    vEng.forEach(function(versionEng){
+        versionEng.classList.toggle("isActive");
+    });
+}
+function changeEngToFr() {
+    vFr.forEach(function(versionFr) {
+        versionFr.classList.toggle("isActive");
+    });
+    vEng.forEach(function(versionEng){
+        versionEng.classList.toggle("isActive");
+    });
+}
 
 
-
+// lancement au bouton home 
 btnProjectHome.addEventListener("click", () => {
     animation();
     goProject();
     widthWaves()
 });
-
+// lancement btn contact 
 btnContact.addEventListener("click", () => {
     animation();
     widthWaves();
 });
-
+// lancement btn my project 
 homebtn.addEventListener("click", () => {
     animation();
     goHome()
@@ -140,3 +155,37 @@ homebtn.addEventListener("click", () => {
     }, 1000);
 });
 
+// animation invitation au scroll 
+window.addEventListener('scroll', () => { 
+    if (document.querySelector(".project")) {
+        askScroll.classList.add('isActive')
+    }
+    setTimeout(function() {
+        askScroll.style.opacity = 0;
+    }, 1000);
+});
+// vers la version eng 
+linkToEnglish.addEventListener("click", () => {
+    if (!vEng.length || !vEng[0].classList.contains("isActive")) {
+        animation()
+        widthWaves()
+        linkToFrench.classList.toggle("isActive")
+        linkToEnglish.classList.toggle("isActive")
+        setTimeout(() => {
+            changeFrToEng()
+        }, 1000);
+    }
+    
+});
+// vers la version fr 
+linkToFrench.addEventListener("click", () => {
+    if (!vFr.length || !vFr[0].classList.contains("isActive")) {
+        animation()
+        widthWaves()
+        linkToFrench.classList.toggle("isActive")
+        linkToEnglish.classList.toggle("isActive")
+        setTimeout(() => {
+            changeEngToFr()
+        }, 1000);
+    }
+});
