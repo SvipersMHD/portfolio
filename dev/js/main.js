@@ -169,9 +169,9 @@ linkToEnglish.addEventListener("click", () => {
     if (!vEng.length || !vEng[0].classList.contains("isActive")) {
         animation()
         widthWaves()
-        linkToFrench.classList.toggle("isActive")
-        linkToEnglish.classList.toggle("isActive")
         setTimeout(() => {
+            linkToFrench.classList.toggle("isActive")
+            linkToEnglish.classList.toggle("isActive")
             changeFrToEng()
         }, 1000);
     }
@@ -182,9 +182,9 @@ linkToFrench.addEventListener("click", () => {
     if (!vFr.length || !vFr[0].classList.contains("isActive")) {
         animation()
         widthWaves()
-        linkToFrench.classList.toggle("isActive")
-        linkToEnglish.classList.toggle("isActive")
         setTimeout(() => {
+            linkToFrench.classList.toggle("isActive")
+            linkToEnglish.classList.toggle("isActive")
             changeEngToFr()
         }, 1000);
     }
