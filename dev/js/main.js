@@ -1,5 +1,5 @@
 const swiper = new Swiper('.swiper', {
-    spaceBetween: 10,
+    direction: 'horizontal',
     loop: true,
     navigation: {
         nextEl: '.swiper-button-next',
@@ -12,8 +12,8 @@ const swiper = new Swiper('.swiper', {
         768: {
             slidesPerView: 2,
         },
-        1024: {
-            slidesPerView: 3,
+        1000: {
+            slidesPerView: 4,
         }
     }
 })
@@ -37,6 +37,9 @@ const linkToFrench = document.querySelector(".fran");
 const vFr = document.querySelectorAll(".v-fr");
 const vEng = document.querySelectorAll(".v-engl");
 const activeEng = document.querySelector('.v-engl .isActive');
+const cookiebtn = document.querySelector('.cookiebtn');
+const cookieBtnEng = document.querySelector(".v-engl.cookiebtn");
+const cookie = document.querySelector('.cookie');
 
 
 // animation vers la partie my project
@@ -131,6 +134,17 @@ function changeEngToFr() {
         versionEng.classList.toggle("isActive");
     });
 }
+// enlève les cookie 
+function cookieSlide() {
+    gsap.to(cookie, {
+        y: 300, // Animer la position à 0 pour chaque élément
+        duration: 0.5, // Durée de l'animation
+        ease: "power2.out" // Courbe d'animation
+    });
+    setTimeout(() => {
+        cookie.style.display = "none"
+    }, 600);
+}
 
 
 // lancement au bouton home 
@@ -141,8 +155,7 @@ btnProjectHome.addEventListener("click", () => {
 });
 // lancement btn contact 
 btnContact.addEventListener("click", () => {
-    animation();
-    widthWaves();
+    window.open('https://www.linkedin.com/in/zohaib-muhammad-a17aa3270/', '_blank');
 });
 // lancement btn my project 
 homebtn.addEventListener("click", () => {
@@ -162,7 +175,7 @@ window.addEventListener('scroll', () => {
     }
     setTimeout(function() {
         askScroll.style.opacity = 0;
-    }, 1000);
+    }, 800);
 });
 // vers la version eng 
 linkToEnglish.addEventListener("click", () => {
@@ -188,4 +201,11 @@ linkToFrench.addEventListener("click", () => {
             changeEngToFr()
         }, 1000);
     }
+});
+// cookie btn 
+cookiebtn.addEventListener("click", () => {
+    cookieSlide()
+})
+cookieBtnEng.addEventListener("click", (event) => {
+    cookieSlide();
 });

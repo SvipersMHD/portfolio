@@ -143,14 +143,14 @@
 @keyframes scrollingOpacity {
     0% {
         
-        transform: translateY(0);
+        transform: translateY(-20px);
     }
     50% {
-        transform: translateY(-20px);
+        transform: translateY(0);
         opacity: 0.5;
     }
     100% {
-        transform: translateY(0);
+        transform: translateY(-20px);
         opacity: 0;
     }
 }
@@ -159,16 +159,20 @@
     
     .slide__arrow {
         color: #000;  
+        transition: .3s all ease-in-out;
+
+        &:hover {
+            text-shadow: 0 0 15px black;
+        }
     }
 }
 .swiper-slide {
-    position: relative;
     display: flex;
     justify-content: center;
     padding-bottom: 50px;
     
     .swiper__img {
-        height: 50%;
+        height: 100%;
         width: 80%;
         display: flex;
         justify-content: center;

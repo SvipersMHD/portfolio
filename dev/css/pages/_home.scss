@@ -19,6 +19,9 @@
         &:hover {
             text-shadow:  0px 0px 15px rgba(0, 0, 0, 0.673);
         }
+        &:nth-of-type(2) {
+            padding-right: 0;
+        }
     }
     .fran.isActive, .eng.isActive {
         text-shadow:  0px 0px 10px rgb(0, 0, 0);
@@ -55,13 +58,12 @@
         &:hover {
             background: $blanc;
         }
-        &:hover h3 {
+        &:hover h3{
             color: black;
         }
         &:hover .bar__first, &:hover .bar__second{
             background: black ;
-        }
-        
+        }      
         h3 {
             text-transform: uppercase;
             font-size: $ff-cate;
@@ -72,6 +74,21 @@
             font-family: $font;
             font-weight: 900;
         } 
+
+    }
+    .home__contact {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        
+        .fa-linkedin {
+            transition: .3s all ease-in-out;
+            color: white;
+            font-size: $ff-h1;
+        }
+        &:hover .fa-linkedin {
+            color: black;
+        }
     }
     .bar {
         width: 80%;
@@ -169,7 +186,7 @@
     height: 51vh;
     position: fixed;
     width: 100%;
-    z-index: 10;
+    z-index: 15;
     
     div {
         height: calc(100% / 5);
@@ -185,7 +202,47 @@
     top: 0;
 }
 
+.cookie {
+    width: 30%;
+    min-width: 300px;
+    margin: 0 auto;
+    position: fixed;
+    bottom: 20px;
+    right: 5%;
+    padding: 20px;
+    background: white;
+    box-shadow: 0px 0px 15px rgba(0,0,0,.1);
+    border-radius: 5px;
+    font-family: $font;
+    line-height: 23px;
+    z-index: 10;
 
+    .cookiebtn {
+        padding: 10px;
+        color: white;
+        background: #000;
+        border-radius: 5px;
+        transition: .3s all ease-in-out;
+        cursor: pointer;
+
+        &:hover {
+            color: black;
+            background: white;
+        }
+
+        &::first-letter {
+            text-transform: uppercase;
+        }
+    }
+}
+
+
+@media screen and (max-width : 320px) {
+    .cookie {
+        left: 50%;
+        transform: translate(-50%);
+    }
+}
 @media screen and (max-width:900px) {
     
     .home {
