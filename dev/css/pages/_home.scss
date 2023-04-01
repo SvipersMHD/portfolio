@@ -67,7 +67,7 @@
             font-size: $ff-cate;
             font-weight: bold;
             margin: 0;
-            color: white;
+            color: $blanc;
             transition: .3s all ease-in-out;
             font-family: $font;
             font-weight: 900;
@@ -76,7 +76,7 @@
     .bar {
         width: 80%;
         height: 2px;
-        background: white;
+        background: $blanc;
         position: absolute;
         transition: all .3s ease-in-out;
         
