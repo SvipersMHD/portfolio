@@ -137,9 +137,9 @@ function changeEngToFr() {
 // enlève les cookie 
 function cookieSlide() {
     gsap.to(cookie, {
-        y: 300, // Animer la position à 0 pour chaque élément
+        y: 500, // Animer la position à 0 pour chaque élément
         duration: 0.5, // Durée de l'animation
-        ease: "power2.out" // Courbe d'animation
+        ease: "power2.out", // Courbe d'animation
     });
     setTimeout(() => {
         cookie.style.display = "none"
