@@ -26,6 +26,7 @@
         font-family: $font;
         font-weight: bold;
         color: white;
+        @include selec;
     }
 }
 .project {
@@ -62,6 +63,7 @@
             
             img {
                 width: 82%;
+                user-select: none;
             }
             .mobile {
                 width: 35%;
@@ -118,6 +120,7 @@
             img {
                 width: 10%;
                 min-width: 50px;
+                user-select: none;
             }
         }
     }
@@ -140,6 +143,7 @@
             font-family: $font;
             margin: 0;
             padding: 50px 0;
+            @include selec;
         }
         .projet__description {
             width: 100%;
@@ -149,6 +153,7 @@
                 line-height: 25px;
                 text-align: justify;
                 font-family: $font;
+                @include selec;
             }
             
         }

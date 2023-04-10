@@ -4,3 +4,10 @@ $ff-h3: 1.25rem;
 $blanc: #eeeeee;
 
 $font :'Poppins', sans-serif;
+
+@mixin selec{
+    &::selection {
+        background-color: black;
+        color: $blanc;
+    }
+}
