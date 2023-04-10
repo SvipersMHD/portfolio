@@ -1,24 +1,3 @@
-const swiper = new Swiper('.swiper', {
-    direction: 'horizontal',
-    loop: true,
-    navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-    },
-    breakpoints: {
-        320: {
-            slidesPerView: 1,
-        },
-        768: {
-            slidesPerView: 2,
-        },
-        1000: {
-            slidesPerView: 4,
-        }
-    }
-})
-
-const askScroll = document.querySelector('.ask__scroll');
 const wavesL = [...document.querySelectorAll('.wave__left div')].reverse();
 const wavesR = document.querySelectorAll('.wave__right div');
 const wavesLWrapper = document.querySelector('.wave__left');
@@ -42,19 +21,19 @@ const cookieBtnEng = document.querySelector(".v-engl.cookiebtn");
 const cookie = document.querySelector('.cookie');
 
 
-// animation vers la partie my project
+// Fonction de l'animation vers la partie my project
 function goProject(){
     setTimeout(function() {
-        project.style.display = "block";
+        project.style.display = "flex";
         home.style.display = "none";
         header.style.display = "none";
         if (window.innerWidth < 900) {
             window.scrollTo(0, 0);
         }
     }, 1000);
-    
+
 }
-// animation retour vers le home 
+//Fonction pour l'animation retour vers le home 
 function goHome(){
     setTimeout(function() {
         project.style.display = "none";
@@ -62,18 +41,18 @@ function goHome(){
         header.style.display = "flex";
     }, 1000);
 }
-// function pour cacher les waves 
+// Fonction pour cacher les waves 
 function widthWaves(){
     wavesLWrapper.style.display = "block";
     wavesRWrapper.style.display = "block";
-    
+
     setTimeout(() => {
         wavesLWrapper.style.display = "none";
         wavesRWrapper.style.display = "none";
-        
+
     }, 2000);
 }
-// animation des waves 
+// Fonction des animations des waves 
 function animation() {
     gsap.to(wavesR, {
         xPercent: -100, // Animer la position à 0 pour chaque élément
@@ -81,7 +60,7 @@ function animation() {
         stagger: 0.1, // Décalage entre chaque élément
         ease: "power2.out" // Courbe d'animation
     });
-    
+
     gsap.to(wavesL, {
         xPercent: 100, // Animer la position à 0 pour chaque élément
         duration: 0.5, // Durée de l'animation
@@ -95,7 +74,7 @@ function animation() {
                 stagger: 0.1, // Décalage entre chaque élément
                 ease: "power2.out" // Courbe d'animation
             });
-            
+
             gsap.to(wavesL, {
                 delay: .3,
                 xPercent: 200, // Animer la position à 0 pour chaque élément
@@ -108,7 +87,7 @@ function animation() {
                         xPercent: 0,
                         right: '-100%'
                     });
-                    
+
                     gsap.set(wavesL, {
                         xPercent: 0,
                         left: '-100%'
@@ -118,6 +97,7 @@ function animation() {
         }
     });
 }
+// Fonction pour changer les langues
 function changeFrToEng() {
     vFr.forEach(function(versionFr) {
         versionFr.classList.toggle("isActive");
@@ -134,7 +114,7 @@ function changeEngToFr() {
         versionEng.classList.toggle("isActive");
     });
 }
-// enlève les cookie 
+// Fonction pour enlever la fenetre des cookies
 function cookieSlide() {
     gsap.to(cookie, {
         y: 500, // Animer la position à 0 pour chaque élément
@@ -168,15 +148,6 @@ homebtn.addEventListener("click", () => {
     }, 1000);
 });
 
-// animation invitation au scroll 
-window.addEventListener('scroll', () => { 
-    if (document.querySelector(".project")) {
-        askScroll.classList.add('isActive')
-    }
-    setTimeout(function() {
-        askScroll.style.opacity = 0;
-    }, 800);
-});
 // vers la version eng 
 linkToEnglish.addEventListener("click", () => {
     if (!vEng.length || !vEng[0].classList.contains("isActive")) {
@@ -188,7 +159,7 @@ linkToEnglish.addEventListener("click", () => {
             changeFrToEng()
         }, 1000);
     }
-    
+
 });
 // vers la version fr 
 linkToFrench.addEventListener("click", () => {
@@ -208,4 +179,241 @@ cookiebtn.addEventListener("click", () => {
 })
 cookieBtnEng.addEventListener("click", (event) => {
     cookieSlide();
+});
+// Partie project animation 
+const slideLeft = document.querySelector(".fa-angle-left")
+const slideRight = document.querySelector(".fa-angle-right")
+
+const trainingTxt = document.querySelector(".project__txt .training")
+const trainingImg = document.querySelector(".project__screen .training")
+const trainingTech = document.querySelector(".project__tech .training")
+
+const newsTxt = document.querySelector(".project__txt .news")
+const newsImg = document.querySelector(".project__screen .news")
+const newsTech = document.querySelector(".project__tech .news")
+
+const todoTxt = document.querySelector(".project__txt .todo")
+const todoImg = document.querySelector(".project__screen .todo")
+const todoTech = document.querySelector(".project__tech .todo")
+
+const mydeezeTxt = document.querySelector(".project__txt .mydeeze")
+const mydeezeImg = document.querySelector(".project__screen .mydeeze")
+const mydeezeTech = document.querySelector(".project__tech .mydeeze")
+
+const food52Txt = document.querySelector(".project__txt .food52")
+const food52Img = document.querySelector(".project__screen .food52")
+const food52Tech = document.querySelector(".project__tech .food52")
+// Fonction pour les screens + tech utilisé 
+function imgAndTechAnim(img, imgnNext, tech, techNext) {
+    gsap.to(img, {
+        duration: 0.5,
+        x: -200 + "vw",
+        ease: "power2.inOut",
+    });
+    gsap.to(imgnNext, {
+        duration: 0.5,
+        x: 0,
+        ease: "power2.inOut",
+    });
+    gsap.to(tech, {
+        duration: 0.5,
+        x: 200 + "vw",
+        ease: "power2.inOut",
+    });
+    gsap.to(techNext, {
+        duration: 0.5,
+        x: 0,
+        ease: "power2.inOut",
+    });
+}
+// Fonction retour pour les screens + tech utilisé 
+function imgAndTechAnimReverse(img, imgnNext, tech, techNext) {
+    gsap.to(img, {
+        duration: 0.5,
+        x: 0,
+        ease: "power2.inOut",
+    });
+    gsap.to(imgnNext, {
+        duration: 0.5,
+        x: 100 + "vw",
+        ease: "power2.inOut",
+    });
+    gsap.to(tech, {
+        duration: 0.5,
+        x: 0,
+        ease: "power2.inOut",
+    });
+    gsap.to(techNext, {
+        duration: 0.5,
+        x: -200 + "vw",
+        ease: "power2.inOut",
+    });
+}
+// Fonction pour les animations + retour 
+function action1() {
+    gsap.to(trainingTxt, {
+        duration: 0.5,
+        y: 100 + "vh",
+        ease: "power2.inOut",
+    });
+    gsap.to(newsTxt, {
+        duration: 0.5,
+        y: 0,
+        ease: "power2.inOut",
+    });
+    imgAndTechAnim(trainingImg,newsImg,trainingTech,newsTech)
+}
+function action1Reverse() {
+    gsap.to(trainingTxt, {
+        duration: 0.5,
+        y: 0,
+        ease: "power2.inOut",
+    });
+    gsap.to(newsTxt, {
+        duration: 0.5,
+        y: -200 + "vh",
+        ease: "power2.inOut",
+    });
+    imgAndTechAnimReverse(trainingImg,newsImg,trainingTech,newsTech)
+}
+function action2() {
+    gsap.to(newsTxt, {
+        duration: 0.5,
+        x: 200 + "vw",
+        ease: "power2.inOut",
+    });
+    gsap.to(todoTxt, {
+        duration: 0.5,
+        x: 0,
+        ease: "power2.inOut",
+    });
+    imgAndTechAnim(newsImg,todoImg,newsTech,todoTech)
+}
+function action2Reverse() {
+    gsap.to(newsTxt, {
+        duration: 0.5,
+        x: 0,
+        ease: "power2.inOut",
+    });
+    gsap.to(todoTxt, {
+        duration: 0.5,
+        x: -200 + "vw",
+        ease: "power2.inOut",
+    });
+    imgAndTechAnimReverse(newsImg,todoImg,newsTech,todoTech)
+}
+function action3() {
+    gsap.to(todoTxt, {
+        duration: 0.5,
+        y: -200 + "vh",
+        ease: "power2.inOut",
+    });
+    gsap.to(mydeezeTxt, {
+        duration: 0.5,
+        y: 0,
+        ease: "power2.inOut",
+    });
+    imgAndTechAnim(todoImg,mydeezeImg,todoTech,mydeezeTech)
+}
+function action3Reverse() {
+    gsap.to(todoTxt, {
+        duration: 0.5,
+        y: 0,
+        ease: "power2.inOut",
+    });
+    gsap.to(mydeezeTxt, {
+        duration: 0.5,
+        y: 200 + "vh",
+        ease: "power2.inOut",
+    });
+    imgAndTechAnimReverse(todoImg,mydeezeImg,todoTech,mydeezeTech)
+}
+function action4() {
+    gsap.to(mydeezeTxt, {
+        duration: 0.5,
+        x: -200 + "vw",
+        ease: "power2.inOut",
+    });
+    gsap.to(food52Txt, {
+        duration: 0.5,
+        x: 0,
+        ease: "power2.inOut",
+    });
+    imgAndTechAnim(mydeezeImg,food52Img,mydeezeTech,food52Tech)
+}
+function action4Reverse() {
+    gsap.to(mydeezeTxt, {
+        duration: 0.5,
+        x: 0,
+        ease: "power2.inOut",
+    });
+    gsap.to(food52Txt, {
+        duration: 0.5,
+        x: 200 + "vw",
+        ease: "power2.inOut",
+    });
+    imgAndTechAnimReverse(mydeezeImg,food52Img,mydeezeTech,food52Tech)
+}
+// Lancement des animations + conditions pour effet retour 
+let isAction1 = false;
+let isAction2 = false;
+let isAction3 = false;
+let isAction4 = false;
+
+slideRight.addEventListener("click", () => {
+    if (isAction1) {
+        action2();
+        isAction1 = false;
+        isAction2 = true;
+        isAction3 = false;
+        isAction4 = false;
+    } else if (isAction2) {
+        action3();
+        isAction1 = false;
+        isAction2 = false;
+        isAction3 = true;
+        isAction4 = false;
+    } else if (isAction3) {
+        action4();
+        isAction1 = false;
+        isAction2 = false;
+        isAction3 = false;
+        isAction4 = true;
+        slideRight.classList.add("isActive")
+    } else if(isAction4) {
+    }
+    else {
+        action1();
+        isAction1 = true;
+        isAction2 = false;
+        isAction3 = false;
+        isAction4 = false;
+        slideLeft.classList.remove("isActive")
+    }
+});
+slideLeft.addEventListener("click", () => {
+    if (isAction4) {
+        action4Reverse();
+        isAction4 = false;
+        isAction3 = true;
+        isAction2 = false;
+        isAction1 = false;
+        slideRight.classList.remove("isActive")
+    } else if (isAction3) {
+        action3Reverse();
+        isAction3 = false;
+        isAction2 = true;
+        isAction1 = false;
+    } else if (isAction2) {
+        action2Reverse();
+        isAction2 = false;
+        isAction1 = true;
+        isAction3 = false;
+    } else if (isAction1) {
+        action1Reverse();
+        isAction1 = false;
+        isAction2 = false;
+        isAction3 = false;
+        slideLeft.classList.add("isActive")
+    }
 });

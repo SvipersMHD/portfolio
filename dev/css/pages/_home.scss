@@ -27,7 +27,7 @@
         text-shadow:  0px 0px 10px rgb(0, 0, 0);
     }
 }
-.home {
+.home, .project {
     height: 100vh;
     display: flex;
     justify-items: center;
@@ -53,7 +53,7 @@
         transition: .3s all ease-in-out;
         cursor: pointer;
         position: relative;
-        background: #000000;
+        background: #000000ef;
         
         &:hover {
             background: $blanc;
@@ -113,7 +113,6 @@
     
     h1 {
         margin: 0;
-        margin-bottom: 50px;
         font-size: $ff-h1;
         text-transform: uppercase;
         
@@ -133,18 +132,9 @@
     }
     .presentation {
         
-        .presentation__photo {
-            width: 30%;
-            position: absolute;
-            right: 10%;
-            top: 0;
-            img {
-                width: 100%;
-            }
-        }
         .presentation__txt {
-            width: 80%;
-            padding: 20px 0 50px;
+            width: 90%;
+            padding: 7% 0 7%;
             
             p {
                 line-height: 25px;
@@ -186,7 +176,7 @@
     height: 51vh;
     position: fixed;
     width: 100%;
-    z-index: 15;
+    z-index: 1000;
     
     div {
         height: calc(100% / 5);
@@ -215,7 +205,7 @@
     border-radius: 5px;
     font-family: $font;
     line-height: 23px;
-    z-index: 10;
+    z-index: 100;
 
     .cookiebtn {
         padding: 10px;
@@ -235,15 +225,25 @@
         }
     }
 }
-
-
+.v-engl {
+    display: none;
+}
+.v-engl.isActive {
+    display: block;
+}
+.v-fr.isActive {
+    display: block;
+}
+.v-fr {
+    display: none;
+}
 @media screen and (max-width : 320px) {
     .cookie {
         left: 50%;
         transform: translate(-50%);
     }
 }
-@media screen and (max-width:900px) {
+@media screen and (max-width:1000px) {
     
     .home {
         flex-direction: column;
@@ -257,6 +257,7 @@
     }
     .right {
         height: auto;
+        min-height: 100vh;
         width: 100%;
         display: flex;
         flex-direction: column;
@@ -276,7 +277,7 @@
             
         }
         .skills {
-            
+            width: 100%;
             h3 {
                 text-align: center;
                 margin: 0 auto;
@@ -286,6 +287,13 @@
             }
             .skills__wrapper {
                 justify-content: center;
+
+                span {
+
+                    &:nth-of-type(1) {
+                        margin-left: 0;
+                    }
+                }
             }
         }
     }
@@ -300,16 +308,4 @@
         right: -100%;
         top: 50%;
     }
-}
-.v-engl {
-    display: none;
-}
-.v-engl.isActive {
-    display: block;
-}
-.v-fr.isActive {
-    display: block;
-}
-.v-fr {
-    display: none;
 }
