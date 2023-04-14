@@ -196,9 +196,9 @@ const todoTxt = document.querySelector(".project__txt .todo")
 const todoImg = document.querySelector(".project__screen .todo")
 const todoTech = document.querySelector(".project__tech .todo")
 
-const mydeezeTxt = document.querySelector(".project__txt .mydeeze")
-const mydeezeImg = document.querySelector(".project__screen .mydeeze")
-const mydeezeTech = document.querySelector(".project__tech .mydeeze")
+const convertorTxt = document.querySelector(".project__txt .convertor")
+const convertorImg = document.querySelector(".project__screen .convertor")
+const convertorTech = document.querySelector(".project__tech .convertor")
 
 const food52Txt = document.querySelector(".project__txt .food52")
 const food52Img = document.querySelector(".project__screen .food52")
@@ -308,12 +308,12 @@ function action3() {
         y: -200 + "vh",
         ease: "power2.inOut",
     });
-    gsap.to(mydeezeTxt, {
+    gsap.to(convertorTxt, {
         duration: 0.5,
         y: 0,
         ease: "power2.inOut",
     });
-    imgAndTechAnim(todoImg,mydeezeImg,todoTech,mydeezeTech)
+    imgAndTechAnim(todoImg,convertorImg,todoTech,convertorTech)
 }
 function action3Reverse() {
     gsap.to(todoTxt, {
@@ -321,15 +321,15 @@ function action3Reverse() {
         y: 0,
         ease: "power2.inOut",
     });
-    gsap.to(mydeezeTxt, {
+    gsap.to(convertorTxt, {
         duration: 0.5,
         y: 200 + "vh",
         ease: "power2.inOut",
     });
-    imgAndTechAnimReverse(todoImg,mydeezeImg,todoTech,mydeezeTech)
+    imgAndTechAnimReverse(todoImg,convertorImg,todoTech,convertorTech)
 }
 function action4() {
-    gsap.to(mydeezeTxt, {
+    gsap.to(convertorTxt, {
         duration: 0.5,
         x: -200 + "vw",
         ease: "power2.inOut",
@@ -339,10 +339,10 @@ function action4() {
         x: 0,
         ease: "power2.inOut",
     });
-    imgAndTechAnim(mydeezeImg,food52Img,mydeezeTech,food52Tech)
+    imgAndTechAnim(convertorImg,food52Img,convertorTech,food52Tech)
 }
 function action4Reverse() {
-    gsap.to(mydeezeTxt, {
+    gsap.to(convertorTxt, {
         duration: 0.5,
         x: 0,
         ease: "power2.inOut",
@@ -352,7 +352,7 @@ function action4Reverse() {
         x: 200 + "vw",
         ease: "power2.inOut",
     });
-    imgAndTechAnimReverse(mydeezeImg,food52Img,mydeezeTech,food52Tech)
+    imgAndTechAnimReverse(convertorImg,food52Img,convertorTech,food52Tech)
 }
 // Lancement des animations + conditions pour effet retour 
 let isAction1 = false;

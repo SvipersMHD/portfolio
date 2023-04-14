@@ -66,19 +66,15 @@
                 user-select: none;
             }
             .mobile {
-                width: 35%;
+                width: 60%;
                 position: absolute;
                 right: 0;
                 bottom: 0;
-                transform: translate(0% , 23%);
+                transform: translate(18% , 13%);
             }
         }
         .out {
             transform: translateX(100vw);
-        }
-        .food52 .mobile {
-            width: 39%;
-            transform: translate(5% , 18%);
         }
     }
 
@@ -193,7 +189,7 @@
         transform: translateX(-200vw);
         width: 40%;
     }
-    .mydeeze {
+    .convertor {
         transform: translateY(200vh);
         width: 40%;
     }
