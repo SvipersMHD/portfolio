@@ -417,3 +417,10 @@ slideLeft.addEventListener("click", () => {
         slideLeft.classList.add("isActive")
     }
 });
+
+
+
+
+
+
+
