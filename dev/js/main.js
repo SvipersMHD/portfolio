@@ -4,7 +4,8 @@ const wavesLWrapper = document.querySelector('.wave__left');
 const wavesRWrapper = document.querySelector('.wave__right');
 
 const btnProjectHome = document.querySelector('.home__project');
-const btnContact = document.querySelector('.home__contact');
+const btnContact = document.querySelector('.home__contact__wrapper');
+const btnGithub = document.querySelector('.home__github__wrapper');
 
 const project = document.querySelector('.project');
 const home = document.querySelector('.home');
@@ -136,6 +137,10 @@ btnProjectHome.addEventListener("click", () => {
 // lancement btn contact 
 btnContact.addEventListener("click", () => {
     window.open('https://www.linkedin.com/in/zohaib-muhammad-a17aa3270/', '_blank');
+});
+// lancement btn github
+btnGithub.addEventListener("click", () => {
+    window.open('https://github.com/SvipersMHD', '_blank');
 });
 // lancement btn my project 
 homebtn.addEventListener("click", () => {

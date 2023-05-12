@@ -1,0 +1,16 @@
+@mixin selec{
+    &::selection {
+        background-color: black;
+        color: $blanc;
+    }
+}
+
+@mixin bar {
+    .bar {
+        width: 80%;
+        height: 2px;
+        background: $blanc;
+        position: absolute;
+        transition: all .3s ease-in-out;
+    }
+}

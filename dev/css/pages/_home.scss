@@ -44,13 +44,19 @@
     align-items: center;
     height: 100%;
     width: 50%;
-    
+
     .home__contact, .home__project {
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 50%;
+        height: calc(100% /2);
         width: 100%;
+        transition: .3s all ease-in-out;
+        cursor: pointer;
+        position: relative;
+    }
+    
+    .home__project {
         transition: .3s all ease-in-out;
         cursor: pointer;
         position: relative;
@@ -79,33 +85,78 @@
         
     }
     .home__contact {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
         
-        .fa-linkedin {
+
+        .home__contact__wrapper, .home__github__wrapper {
+            display: flex;
+            flex-direction: column;
+            align-self: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            background: #000000ef;
             transition: .3s all ease-in-out;
-            color: white;
-            font-size: $ff-h1;
-        }
-        &:hover .fa-linkedin {
-            color: black;
+            position: relative;
+
+            h3 {
+                text-transform: uppercase;
+                font-size: $ff-cate;
+                font-weight: bold;
+                margin: 0;
+                color: $blanc;
+                transition: .3s all ease-in-out;
+                font-family: $font;
+                font-weight: 900;
+                @include selec;
+            }
+            &:hover {
+                background: $blanc;
+            }
+            &:hover h3{
+                color: black;
+            }
+            &:hover .fa-linkedin, &:hover .fa-github {
+                color: black;
+            }
+            .fa-linkedin, .fa-github {
+                transition: .3s all ease-in-out;
+                color: white;
+                font-size: $ff-h1;
+                padding: 1rem;
+            }
+            &:hover .bar__half__left, &:hover .bar__half__right, &:hover .barv__half__left, &:hover .barv__half__right {
+                background: black ;
+            }
         }
     }
-    .bar {
-        width: 80%;
-        height: 2px;
-        background: $blanc;
-        position: absolute;
-        transition: all .3s ease-in-out;
-        
-    }
-    .bar__first {
+    @include bar;
+    .bar__half__left {
         bottom: 0;
+        right: 0;
+    }
+    .bar__half__right {
+        bottom: 0;
+        left: 0;
     }
     .bar__second {
         top: 0;
     }
+
+    .barv {
+        width: 1px;
+        height: 60%;
+        background: $blanc;
+        position: absolute;
+        transition: all .3s ease-in-out;
+    }
+    .barv__half__right {
+        left: 0;
+    }
+    .barv__half__left {
+        right: 0;
+    }
+
 }
 .right {
     position: relative;
@@ -125,23 +176,6 @@
             &:nth-of-type(3) {
                 font-size: 20px;
                 margin: 10px 0;
-            }
-
-            .github__link {
-                text-decoration: none;
-                color: black;
-                position: relative;
-                transition: .3s all ease-in-out;
-
-                &:hover {
-                    text-shadow:  0px 0px 15px rgba(0, 0, 0, 0.289);
-                }
-
-                i {
-                    font-size: 15px;
-                    position: absolute;
-                    top: 0;
-                }
             }
         }
     }

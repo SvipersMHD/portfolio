@@ -5,9 +5,3 @@ $blanc: #eeeeee;
 
 $font :'Poppins', sans-serif;
 
-@mixin selec{
-    &::selection {
-        background-color: black;
-        color: $blanc;
-    }
-}
