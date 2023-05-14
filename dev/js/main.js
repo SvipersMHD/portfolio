@@ -21,6 +21,34 @@ const cookiebtn = document.querySelector('.cookiebtn');
 const cookieBtnEng = document.querySelector(".v-engl.cookiebtn");
 const cookie = document.querySelector('.cookie');
 
+const topRight = document.querySelector("#top")
+const bottomRight = document.querySelector("#bottom")
+
+topRight.addEventListener("click", () => {
+    gsap.to(bottomRight, {
+        duration: 0.5,
+        y: -100 + "vh",
+        ease: "power2.inOut",
+    });
+    gsap.to(topRight, {
+        duration: 0.5,
+        y: -100 + "vh",
+        ease: "power2.inOut",
+    });
+})
+bottomRight.addEventListener("click", () => {
+    gsap.to(bottomRight, {
+        duration: 0.5,
+        y: 0,
+        ease: "power2.inOut",
+    });
+    gsap.to(topRight, {
+        duration: 0.5,
+        y: 0,
+        ease: "power2.inOut",
+    });
+})
+
 
 // Fonction de l'animation vers la partie my project
 function goProject(){
@@ -126,8 +154,6 @@ function cookieSlide() {
         cookie.style.display = "none"
     }, 600);
 }
-
-
 // lancement au bouton home 
 btnProjectHome.addEventListener("click", () => {
     animation();

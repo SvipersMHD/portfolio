@@ -1,4 +1,6 @@
-
+body {
+    overflow-y: hidden;
+}
 .header {
     width: 90%;
     position: absolute;
@@ -31,8 +33,7 @@
 .home {
     height: 200vh;
     display: flex;
-    justify-items: center;
-    align-items: baseline;
+    align-items: flex-start;
     gap: 50px;
     background: $blanc;
     position: relative;
@@ -163,6 +164,8 @@
     position: relative;
     width: 50%;
     font-family: $font;
+    display: flex;
+    flex-direction: column;
     
     h1 {
         margin: 0;
@@ -189,12 +192,31 @@
         
         .presentation__txt {
             width: 90%;
-            padding: 7% 0 7%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            height: 200vh;
             
             p {
-                line-height: 25px;
+                line-height: 35px;
                 text-align: justify;
                 @include selec;
+                font-size: 1.2rem;
+            }
+
+            .first__section__presentation__txt, .aboutme__presentation__txt {
+                // height: 100vh;
+                display: flex;
+                flex-direction: column;
+                justify-self: flex-start;
+
+            }
+            .first__section__presentation__txt {
+
+                .role {
+                    padding: 10% 0 7%;
+                    font-size: 1.35rem;
+                }
             }
         }
     }
@@ -229,6 +251,7 @@
         }
     }
 }
+
 .wave {
     display: none;
     height: 51vh;
