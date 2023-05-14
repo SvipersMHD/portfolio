@@ -47,7 +47,7 @@ body {
     width: 50%;
     position: sticky;
     top: 0;
-
+    
     .home__contact, .home__project {
         display: flex;
         justify-content: center;
@@ -63,7 +63,7 @@ body {
         transition: .3s all ease-in-out;
         cursor: pointer;
         position: relative;
-        background: #000000ef;
+        background: $noir;
         
         &:hover {
             background: $blanc;
@@ -88,7 +88,7 @@ body {
         
     }
     .home__contact {
-
+        
         .home__contact__wrapper, .home__github__wrapper {
             display: flex;
             flex-direction: column;
@@ -97,10 +97,10 @@ body {
             width: 100%;
             height: 100%;
             text-align: center;
-            background: #000000ef;
+            background: $noir;
             transition: .3s all ease-in-out;
             position: relative;
-
+            
             h3 {
                 text-transform: uppercase;
                 font-size: $ff-cate;
@@ -144,7 +144,7 @@ body {
     .bar__second {
         top: 0;
     }
-
+    
     .barv {
         width: 1px;
         height: 60%;
@@ -158,7 +158,7 @@ body {
     .barv__half__left {
         right: 0;
     }
-
+    
 }
 .right {
     position: relative;
@@ -194,8 +194,9 @@ body {
             width: 90%;
             display: flex;
             flex-direction: column;
-            justify-content: space-around;
-            height: 200vh;
+            justify-content: center;
+            height: 100vh;
+            
             
             p {
                 line-height: 35px;
@@ -205,18 +206,53 @@ body {
             }
 
             .first__section__presentation__txt, .aboutme__presentation__txt {
-                // height: 100vh;
                 display: flex;
                 flex-direction: column;
-                justify-self: flex-start;
-
+                justify-self: flex-start;     
             }
             .first__section__presentation__txt {
-
+                
                 .role {
                     padding: 10% 0 7%;
                     font-size: 1.35rem;
                 }
+                p {
+                    padding-bottom: 7%;
+                }
+            }
+            .aboutme__presentation__txt {
+                position: fixed;
+                top: 100vh;
+                .padding__top {
+                    padding-top: 7%;
+                }
+                p {
+                    font-size: 1.2rem;
+                    width: 90%;
+                }
+            }
+            .backtotop, .aboutme {
+                width: 30%;
+                min-width: 200px;    
+                padding: 20px;
+                background: #000;
+                color: white;
+                transition: .3s all ease-in-out;
+                font-size: 1.2rem;
+                cursor: pointer;
+                border-radius: 5px;
+
+                
+                &:hover {
+                    background: $blanc;
+                    color: black;
+                }
+            }
+            .aboutme {
+                align-self: flex-end;
+            }
+            .backtotop {
+                align-self: flex-start;
             }
         }
     }
@@ -234,8 +270,12 @@ body {
             justify-content: flex-start;
             
             span {
-                width: 90px;
-                height: 90px;
+                width: 12%;
+                min-width: 70px;
+                max-width: 90px;
+                height: 12%;
+                min-height: 70px;
+                max-height: 90px;
                 padding: 15px;
                 
                 img {
@@ -279,7 +319,8 @@ body {
     margin: 0 auto;
     position: fixed;
     bottom: 20px;
-    right: 5%;
+    right: 50%;
+    transform: translateX(50%);
     padding: 20px;
     background: white;
     box-shadow: 0px 0px 15px rgba(0,0,0,.1);
@@ -299,7 +340,7 @@ body {
         transition: .3s all ease-in-out;
         cursor: pointer;
         @include selec;
-
+        
         &:hover {
             color: black;
             background: white;
@@ -328,7 +369,7 @@ body {
         transform: translate(-50%);
     }
 }
-@media screen and (max-width : 490px) {
+@media screen and (max-width : 510px) {
     .left {
         .home__contact {
             h3 {
@@ -336,9 +377,13 @@ body {
             }
         }
     }
+
+    
 }
 @media screen and (max-width:1000px) {
-    
+    body {
+        overflow-y: visible;
+    }
     .home {
         flex-direction: column;
         height: auto;
@@ -369,6 +414,31 @@ body {
             justify-content: center;
             align-items: center;
             
+            .presentation__txt {
+                justify-content: center;
+                height: auto;
+                padding-bottom: 7%;
+
+                .backtotop, .aboutme {
+                    display: none;
+                }
+                .first__section__presentation__txt {
+
+                    p {
+                        padding: 0;
+                    }
+                }
+                .aboutme__presentation__txt {
+                    position: relative;
+                    top: 0;
+                    p {
+                        width: 95%;
+                    }
+                    .padding__top {
+                        padding-top: 0;
+                    }
+                }
+            }
         }
         .skills {
             width: 100%;

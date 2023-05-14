@@ -23,30 +23,37 @@ const cookie = document.querySelector('.cookie');
 
 const topRight = document.querySelector("#top")
 const bottomRight = document.querySelector("#bottom")
+const aboutme = document.querySelectorAll(".aboutme")
+const backToTop = document.querySelectorAll(".backtotop")
 
-topRight.addEventListener("click", () => {
-    gsap.to(bottomRight, {
-        duration: 0.5,
-        y: -100 + "vh",
-        ease: "power2.inOut",
-    });
-    gsap.to(topRight, {
-        duration: 0.5,
-        y: -100 + "vh",
-        ease: "power2.inOut",
-    });
+// Animation du btn vers à propos + retour 
+aboutme.forEach(aboutBtn => {
+    aboutBtn.addEventListener("click", () => {
+        gsap.to(bottomRight, {
+            duration: 0.5,
+            y: -85 + "vh",
+            ease: "power2.inOut",
+        });
+        gsap.to(topRight, {
+            duration: 0.5,
+            y: -100 + "vh",
+            ease: "power2.inOut",
+        });
+    })
 })
-bottomRight.addEventListener("click", () => {
-    gsap.to(bottomRight, {
-        duration: 0.5,
-        y: 0,
-        ease: "power2.inOut",
-    });
-    gsap.to(topRight, {
-        duration: 0.5,
-        y: 0,
-        ease: "power2.inOut",
-    });
+backToTop.forEach(backToTopBtn => {
+    backToTopBtn.addEventListener("click", () => {
+        gsap.to(bottomRight, {
+            duration: 0.5,
+            y: 100 + " vh",
+            ease: "power2.inOut",
+        });
+        gsap.to(topRight, {
+            duration: 0.5,
+            y: 0,
+            ease: "power2.inOut",
+        });
+    })
 })
 
 
