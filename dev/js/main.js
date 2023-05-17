@@ -31,7 +31,7 @@ aboutme.forEach(aboutBtn => {
     aboutBtn.addEventListener("click", () => {
         gsap.to(bottomRight, {
             duration: 0.5,
-            y: -80 + "vh",
+            y: -85 + "vh",
             ease: "power2.inOut",
         });
         gsap.to(topRight, {
