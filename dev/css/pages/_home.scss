@@ -171,6 +171,7 @@ body {
     width: 50%;
     font-family: $font;
     display: flex;
+    align-items: center;
     flex-direction: column;
     
     h1 {
@@ -236,7 +237,7 @@ body {
                     width: 90%;
 
                     .mobile__title {
-                        padding-top: 7%;
+                        padding: 3% 0;
                         align-self: flex-end;
                         @include selec;
                     }
@@ -450,6 +451,7 @@ body {
 
                     .aboutme__wrapper {
                         width: 100%;
+
                     }
                     position: relative;
                     top: 0;
