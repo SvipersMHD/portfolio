@@ -1,0 +1,24 @@
+html {
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+}
+/* Barre de défilement pour navigateurs Webkit */
+::-webkit-scrollbar {
+    width: 10px; /* Largeur de la barre de défilement */
+}
+
+::-webkit-scrollbar-track {
+    background: $blanc; /* Couleur de fond de la piste */
+}
+
+::-webkit-scrollbar-thumb {
+    background: $noir; /* Couleur de la poignée de défilement */
+    transition: .3s all ease-in-out;
+    border-radius: 2px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(70, 70, 70); /* Couleur de la poignée de défilement au survol */
+}
+strong {
+    @include selec;
+}

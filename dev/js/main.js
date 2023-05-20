@@ -17,62 +17,6 @@ const linkToFrench = document.querySelector(".fran");
 const vFr = document.querySelectorAll(".v-fr");
 const vEng = document.querySelectorAll(".v-engl");
 const activeEng = document.querySelector('.v-engl .isActive');
-const cookiebtn = document.querySelector('.cookiebtn');
-const cookieBtnEng = document.querySelector(".v-engl.cookiebtn");
-const cookie = document.querySelector('.cookie');
-
-const topRight = document.querySelector("#top")
-const bottomRight = document.querySelector("#bottom")
-const aboutme = document.querySelectorAll(".aboutme")
-const backToTop = document.querySelectorAll(".backtotop")
-
-window.addEventListener("resize", () => {
-    remonte()
-    console.log("test");
-})
-function remonte() {
-    gsap.to(bottomRight, {
-        duration: 0.5,
-        y: 100 + " vh",
-        ease: "power2.inOut",
-    });
-    gsap.to(topRight, {
-        duration: 0.5,
-        y: 0,
-        ease: "power2.inOut",
-    });
-}
-
-// Animation du btn vers à propos + retour 
-aboutme.forEach(aboutBtn => {
-    aboutBtn.addEventListener("click", () => {
-        gsap.to(bottomRight, {
-            duration: 0.5,
-            y: -80 + "vh",
-            ease: "power2.inOut",
-        });
-        gsap.to(topRight, {
-            duration: 0.5,
-            y: -100 + "vh",
-            ease: "power2.inOut",
-        });
-    })
-})
-backToTop.forEach(backToTopBtn => {
-    backToTopBtn.addEventListener("click", () => {
-        gsap.to(bottomRight, {
-            duration: 0.5,
-            y: 100 + " vh",
-            ease: "power2.inOut",
-        });
-        gsap.to(topRight, {
-            duration: 0.5,
-            y: 0,
-            ease: "power2.inOut",
-        });
-    })
-})
-
 
 // Fonction de l'animation vers la partie my project
 function goProject(){
@@ -167,17 +111,6 @@ function changeEngToFr() {
         versionEng.classList.toggle("isActive");
     });
 }
-// Fonction pour enlever la fenetre des cookies
-function cookieSlide() {
-    gsap.to(cookie, {
-        y: 500, // Animer la position à 0 pour chaque élément
-        duration: 0.5, // Durée de l'animation
-        ease: "power2.out", // Courbe d'animation
-    });
-    setTimeout(() => {
-        cookie.style.display = "none"
-    }, 600);
-}
 // lancement au bouton home 
 btnProjectHome.addEventListener("click", () => {
     animation();
@@ -231,13 +164,6 @@ linkToFrench.addEventListener("click", () => {
             changeEngToFr()
         }, 1000);
     }
-});
-// cookie btn 
-cookiebtn.addEventListener("click", () => {
-    cookieSlide()
-})
-cookieBtnEng.addEventListener("click", (event) => {
-    cookieSlide();
 });
 // Partie project animation 
 const slideLeft = document.querySelector(".fa-angle-left")

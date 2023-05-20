@@ -1,6 +1,6 @@
-body {
-    overflow-y: hidden;
-}
+// body {
+//     overflow-y: hidden;
+// }
 .header {
     width: 90%;
     position: absolute;
@@ -37,7 +37,7 @@ body {
     }
 }
 .home {
-    height: 200vh;
+    // height: 200vh;
     display: flex;
     align-items: flex-start;
     gap: 50px;
@@ -174,143 +174,87 @@ body {
     align-items: center;
     flex-direction: column;
     
-    h1 {
-        margin: 0;
-        font-size: $ff-h1;
-        text-transform: uppercase;
-        
-        span {
-            display: block;
-            @include selec;
-            
-            &:nth-of-type(3) {
-                font-size: 20px;
-                margin: 10px 0;
-            }
-        }
-    }
-    .role {
-        font-weight: bold;
-        font-size: $ff-h3;
-        margin: 0;
-        @include selec;
-    }
     .presentation {
         
         .presentation__txt {
             width: 90%;
+            height: auto;
+            min-height: 150vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
-            height: 100vh;
-            
-            
-            p {
-                line-height: 35px;
-                text-align: justify;
-                @include selec;
-                font-size: 1.2rem;
-            }
 
             .first__section__presentation__txt, .aboutme__presentation__txt {
                 display: flex;
                 flex-direction: column;
-                justify-self: flex-start;     
+                justify-content: center;   
+                height: 100vh;
+                scroll-snap-align: start;
+                
+                p {
+                    line-height: 35px;
+                    text-align: justify;
+                    @include selec;
+                    font-size: 1.2rem;
+                }
             }
             .first__section__presentation__txt {
-                
-                .role {
-                    padding: 10% 0 7%;
-                    font-size: 1.35rem;
-                }
-                p {
-                    padding-bottom: 7%;
+
+                .role__photo {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+
+                    .role__photo__title {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-evenly;
+                        .role {
+                            padding: 10% 0 7%;
+                            font-weight: bold;
+                            font-size: $ff-h3;
+                            margin: 0;
+                            @include selec;
+                        }
+                        h1 {
+                            margin: 0;
+                            font-size: $ff-h1;
+                            text-transform: uppercase;
+                            
+                            span {
+                                display: block;
+                                @include selec;
+                                
+                                &:nth-of-type(3) {
+                                    font-size: 20px;
+                                    margin: 10px 0;
+                                }
+                            }
+                        }
+                    }
+                    img {
+                        display: block;
+                        width: 45%;
+                    }
                 }
             }
             .aboutme__presentation__txt {
-                position: fixed;
-                top: 100vh;
+                
 
                 .aboutme__wrapper {
                     display: flex;
                     flex-direction: column;
-                    width: 90%;
 
                     .mobile__title {
                         padding: 3% 0;
                         align-self: flex-end;
                         @include selec;
                     }
-                    p {
-                        font-size: 1.2rem;
-                        margin: 2% 0;
-                        line-height: 1.8rem;
-                    }
-
-                }
-            }
-            .backtotop, .aboutme {
-                width: 30%;
-                min-width: 200px;    
-                padding: 20px;
-                background: #000;
-                color: white;
-                transition: .3s all ease-in-out;
-                font-size: 1.2rem;
-                cursor: pointer;
-                border-radius: 5px;
-                @include selec;
-
-                
-                &:hover {
-                    background: $blanc;
-                    color: black;
-                }
-            }
-            .aboutme {
-                align-self: flex-end;
-            }
-            .backtotop {
-                align-self: flex-start;
-            }
-        }
-    }
-    .skills {
-        
-        h3 {
-            margin: 0;
-            font-size: $ff-h3;
-            padding-bottom: 20px;
-            @include selec;
-        }
-        .skills__wrapper {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: flex-start;
-            
-            span {
-                width: 12%;
-                min-width: 70px;
-                max-width: 90px;
-                height: 12%;
-                min-height: 70px;
-                max-height: 90px;
-                padding: 15px;
-                
-                img {
-                    width: 100%;
-                    height: 100%;
-                    user-select: none;
-                }
-                
-                &:nth-of-type(1) {
-                    margin-left: -15px;
                 }
             }
         }
     }
 }
-
 .wave {
     display: none;
     height: 51vh;
@@ -331,45 +275,6 @@ body {
     right: -100%;
     top: 0;
 }
-
-.cookie {
-    width: 40%;
-    min-width: 300px;
-    margin: 0 auto;
-    position: fixed;
-    bottom: 20px;
-    right: 50%;
-    transform: translateX(50%);
-    padding: 20px;
-    background: white;
-    box-shadow: 0px 0px 15px rgba(0,0,0,.1);
-    border-radius: 5px;
-    font-family: $font;
-    line-height: 23px;
-    z-index: 100;
-    
-    p {
-        @include selec;
-    }
-    .cookiebtn {
-        padding: 10px;
-        color: white;
-        background: #000;
-        border-radius: 5px;
-        transition: .3s all ease-in-out;
-        cursor: pointer;
-        @include selec;
-        
-        &:hover {
-            color: black;
-            background: white;
-        }
-        
-        &::first-letter {
-            text-transform: uppercase;
-        }
-    }
-}
 .v-engl {
     display: none;
 }
@@ -382,13 +287,7 @@ body {
 .v-fr {
     display: none;
 }
-@media screen and (max-width : 320px) {
-    .cookie {
-        left: 50%;
-        transform: translate(-50%);
-    }
-}
-@media screen and (max-width : 510px) {
+@media screen and (max-width : 530px) {
     .left {
         .home__contact {
             h3 {
@@ -396,8 +295,11 @@ body {
             }
         }
     }
-
-    
+    .first__section__presentation__txt {
+        .role__photo {
+            flex-direction: column;
+        }
+    }
 }
 @media screen and (max-width:1000px) {
     body {
@@ -423,9 +325,6 @@ body {
         align-items: center;
         padding: 50px 0;
         
-        h1, .role  {
-            align-self: flex-start;
-        }
         .presentation, h1 {
             width: 100%;
             display: flex;
@@ -441,39 +340,11 @@ body {
                 .backtotop, .aboutme {
                     display: none;
                 }
-                .first__section__presentation__txt {
-
+                .first__section__presentation__txt, .aboutme__presentation__txt {
+                    scroll-snap-align: none;
+                    height: auto;
                     p {
                         padding: 0;
-                    }
-                }
-                .aboutme__presentation__txt {
-
-                    .aboutme__wrapper {
-                        width: 100%;
-
-                    }
-                    position: relative;
-                    top: 0;
-                }
-            }
-        }
-        .skills {
-            width: 100%;
-            h3 {
-                text-align: center;
-                margin: 0 auto;
-                font-size: $ff-h3;
-                padding-bottom: 20px;
-                
-            }
-            .skills__wrapper {
-                justify-content: center;
-                
-                span {
-                    
-                    &:nth-of-type(1) {
-                        margin-left: 0;
                     }
                 }
             }
