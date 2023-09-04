@@ -170,16 +170,14 @@
     position: relative;
     width: 50%;
     font-family: $font;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
+    overflow: hidden;
     
     .presentation {
         
         .presentation__txt {
             width: 90%;
             height: auto;
-            min-height: 150vh;
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -239,7 +237,12 @@
                 }
             }
             .aboutme__presentation__txt {
-                
+                // display: none;
+                position: absolute;
+                width: 90%;
+                background: $blanc;
+                transition: .3s all ease-in-out;
+                transform: translateY(100vh);
 
                 .aboutme__wrapper {
                     display: flex;

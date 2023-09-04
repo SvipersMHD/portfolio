@@ -12,11 +12,23 @@ const home = document.querySelector('.home');
 const header = document.querySelector('.header');
 const homebtn = document.querySelector('.project__btn__home');
 
+
+const aboutMe = document.querySelector('.aboutme__presentation__txt');
+const btnToAbout = document.querySelector('.btnToAbout');
+
 const linkToEnglish = document.querySelector(".eng");
 const linkToFrench = document.querySelector(".fran");
 const vFr = document.querySelectorAll(".v-fr");
 const vEng = document.querySelectorAll(".v-engl");
 const activeEng = document.querySelector('.v-engl .isActive');
+
+btnToAbout.addEventListener(("click"),() => {
+    gsap.to(aboutMe, {
+        y: 0, 
+        duration: 1, 
+        ease: "power4.out", 
+    });
+})
 
 // Fonction de l'animation vers la partie my project
 function goProject(){
@@ -234,109 +246,62 @@ function imgAndTechAnimReverse(img, imgnNext, tech, techNext) {
         ease: "power2.inOut",
     });
 }
+// fonction pour animé les textes 
+function animationTexteY(txtOld,slidingFrom,txtNew,slidingReverse){
+    gsap.to(txtOld, {
+        duration: 0.5,
+        y: slidingFrom + "vh",
+        ease: "power2.inOut",
+    });
+    gsap.to(txtNew, {
+        duration: 0.5,
+        y: slidingReverse + "vh",
+        ease: "power2.inOut",
+    });
+}
+function animationTexteX(txtOld,slidingFrom,txtNew,slidingReverse){
+    gsap.to(txtOld, {
+        duration: 0.5,
+        x: slidingFrom + "vw",
+        ease: "power2.inOut",
+    });
+    gsap.to(txtNew, {
+        duration: 0.5,
+        x: slidingReverse + "vw",
+        ease: "power2.inOut",
+    });
+}
 // Fonction pour les animations + retour 
 function action1() {
-    gsap.to(trainingTxt, {
-        duration: 0.5,
-        y: 100 + "vh",
-        ease: "power2.inOut",
-    });
-    gsap.to(newsTxt, {
-        duration: 0.5,
-        y: 0,
-        ease: "power2.inOut",
-    });
+    animationTexteY(trainingTxt,100,newsTxt,0)
     imgAndTechAnim(trainingImg,newsImg,trainingTech,newsTech)
 }
 function action1Reverse() {
-    gsap.to(trainingTxt, {
-        duration: 0.5,
-        y: 0,
-        ease: "power2.inOut",
-    });
-    gsap.to(newsTxt, {
-        duration: 0.5,
-        y: -200 + "vh",
-        ease: "power2.inOut",
-    });
+    animationTexteY(trainingTxt,0,newsTxt,-200)
     imgAndTechAnimReverse(trainingImg,newsImg,trainingTech,newsTech)
 }
 function action2() {
-    gsap.to(newsTxt, {
-        duration: 0.5,
-        x: 200 + "vw",
-        ease: "power2.inOut",
-    });
-    gsap.to(todoTxt, {
-        duration: 0.5,
-        x: 0,
-        ease: "power2.inOut",
-    });
+    animationTexteX(newsTxt,200,todoTxt,0)
     imgAndTechAnim(newsImg,todoImg,newsTech,todoTech)
 }
 function action2Reverse() {
-    gsap.to(newsTxt, {
-        duration: 0.5,
-        x: 0,
-        ease: "power2.inOut",
-    });
-    gsap.to(todoTxt, {
-        duration: 0.5,
-        x: -200 + "vw",
-        ease: "power2.inOut",
-    });
+    animationTexteX(newsTxt,0,todoTxt,-200)
     imgAndTechAnimReverse(newsImg,todoImg,newsTech,todoTech)
 }
 function action3() {
-    gsap.to(todoTxt, {
-        duration: 0.5,
-        y: -200 + "vh",
-        ease: "power2.inOut",
-    });
-    gsap.to(convertorTxt, {
-        duration: 0.5,
-        y: 0,
-        ease: "power2.inOut",
-    });
+    animationTexteY(todoTxt,-200,convertorTxt,0)
     imgAndTechAnim(todoImg,convertorImg,todoTech,convertorTech)
 }
 function action3Reverse() {
-    gsap.to(todoTxt, {
-        duration: 0.5,
-        y: 0,
-        ease: "power2.inOut",
-    });
-    gsap.to(convertorTxt, {
-        duration: 0.5,
-        y: 200 + "vh",
-        ease: "power2.inOut",
-    });
+    animationTexteY(todoTxt,0,convertorTxt,200)
     imgAndTechAnimReverse(todoImg,convertorImg,todoTech,convertorTech)
 }
 function action4() {
-    gsap.to(convertorTxt, {
-        duration: 0.5,
-        x: -200 + "vw",
-        ease: "power2.inOut",
-    });
-    gsap.to(food52Txt, {
-        duration: 0.5,
-        x: 0,
-        ease: "power2.inOut",
-    });
+    animationTexteX(convertorTxt,-200,food52Txt,0)
     imgAndTechAnim(convertorImg,food52Img,convertorTech,food52Tech)
 }
 function action4Reverse() {
-    gsap.to(convertorTxt, {
-        duration: 0.5,
-        x: 0,
-        ease: "power2.inOut",
-    });
-    gsap.to(food52Txt, {
-        duration: 0.5,
-        x: 200 + "vw",
-        ease: "power2.inOut",
-    });
+    animationTexteX(convertorTxt,0,food52Txt,200)
     imgAndTechAnimReverse(convertorImg,food52Img,convertorTech,food52Tech)
 }
 // Lancement des animations + conditions pour effet retour 
