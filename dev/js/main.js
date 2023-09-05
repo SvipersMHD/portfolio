@@ -15,6 +15,7 @@ const homebtn = document.querySelector('.project__btn__home');
 
 const aboutMe = document.querySelector('.aboutme__presentation__txt');
 const btnToAbout = document.querySelector('.btnToAbout');
+const btnToMe = document.querySelector('.btnToMe');
 
 const linkToEnglish = document.querySelector(".eng");
 const linkToFrench = document.querySelector(".fran");
@@ -25,7 +26,14 @@ const activeEng = document.querySelector('.v-engl .isActive');
 btnToAbout.addEventListener(("click"),() => {
     gsap.to(aboutMe, {
         y: 0, 
-        duration: 1, 
+        duration: 1.5, 
+        ease: "power4.out", 
+    });
+})
+btnToMe.addEventListener(("click"),() => {
+    gsap.to(aboutMe, {
+        y: 100 + "vh", 
+        duration: 1.5, 
         ease: "power4.out", 
     });
 })

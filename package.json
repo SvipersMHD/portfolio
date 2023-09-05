@@ -18,5 +18,8 @@
     "gulp-sourcemaps": "^3.0.0",
     "gulp-uglify": "^3.0.2",
     "sass": "^1.58.1"
+  },
+  "dependencies": {
+    "gsap": "npm:@gsap/member@^3.12.2"
   }
 }

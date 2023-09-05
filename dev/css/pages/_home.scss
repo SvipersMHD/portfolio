@@ -241,7 +241,6 @@
                 position: absolute;
                 width: 90%;
                 background: $blanc;
-                transition: .3s all ease-in-out;
                 transform: translateY(100vh);
 
                 .aboutme__wrapper {
@@ -254,6 +253,27 @@
                         @include selec;
                     }
                 }
+            }
+            .btnTo {
+                background-color: black;
+                color: white;
+                padding: 30px 50px 55px;
+                align-self: flex-end;
+                max-width: 35%;
+                cursor: pointer;
+                position: absolute;
+                bottom: -25px;
+                border-radius: 32px 32px 0 0 ;
+                border: none;
+                transition: .3s all ease-in-out;
+
+
+            }
+            .btnToAbout:hover {
+                background: white;
+                color: black;
+                transform: translateY(-25px);
+                font-weight: 600;
             }
         }
     }
