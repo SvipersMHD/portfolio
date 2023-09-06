@@ -266,8 +266,7 @@
                 border-radius: 32px 32px 0 0 ;
                 border: none;
                 transition: .3s all ease-in-out;
-
-
+                z-index: 190;
             }
             .btnToAbout:hover {
                 background: white;

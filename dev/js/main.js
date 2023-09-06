@@ -23,20 +23,24 @@ const vFr = document.querySelectorAll(".v-fr");
 const vEng = document.querySelectorAll(".v-engl");
 const activeEng = document.querySelector('.v-engl .isActive');
 
+getBtnToAboutToggle = true;
+
 btnToAbout.addEventListener(("click"),() => {
+    if(getBtnToAboutToggle){
     gsap.to(aboutMe, {
         y: 0, 
         duration: 1.5, 
         ease: "power4.out", 
-    });
+    }) } else {
+        gsap.to(aboutMe, {
+            y: 100 + "vh", 
+            duration: 1.5, 
+            ease: "power4.out", 
+        })
+    }
+    getBtnToAboutToggle = !getBtnToAboutToggle
 })
-btnToMe.addEventListener(("click"),() => {
-    gsap.to(aboutMe, {
-        y: 100 + "vh", 
-        duration: 1.5, 
-        ease: "power4.out", 
-    });
-})
+
 
 // Fonction de l'animation vers la partie my project
 function goProject(){
