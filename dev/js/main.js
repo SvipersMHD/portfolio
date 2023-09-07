@@ -16,6 +16,8 @@ const homebtn = document.querySelector('.project__btn__home');
 const aboutMe = document.querySelector('.aboutme__presentation__txt');
 const btnToAbout = document.querySelector('.btnToAbout');
 const btnToMe = document.querySelector('.btnToMe');
+const txtToAbout = document.querySelector('.txtToAbout');
+const txtToUp = document.querySelector('.toUpTxt');
 
 const linkToEnglish = document.querySelector(".eng");
 const linkToFrench = document.querySelector(".fran");
@@ -38,6 +40,16 @@ btnToAbout.addEventListener(("click"),() => {
             ease: "power4.out", 
         })
     }
+    gsap.to(txtToAbout, {
+        y : -100 + "vh",
+        duration : 1.5,
+        ease : "power4.out"
+    })
+    gsap.to(txtToUp, {
+        y : 0,
+        duration : 1.5,
+        ease : "power4.out"
+    })
     getBtnToAboutToggle = !getBtnToAboutToggle
 })
 
@@ -314,6 +326,10 @@ function action4() {
 }
 function action4Reverse() {
     animationTexteX(convertorTxt,0,food52Txt,200)
+    imgAndTechAnimReverse(convertorImg,food52Img,convertorTech,food52Tech)
+}
+function action(textActif,textActifPos,textNext,textNextPos){
+    animationTexteY(textActif,textActifPos,textNext,textNextPos)
     imgAndTechAnimReverse(convertorImg,food52Img,convertorTech,food52Tech)
 }
 // Lancement des animations + conditions pour effet retour 

@@ -274,6 +274,12 @@
                 transform: translateY(-25px);
                 font-weight: 600;
             }
+            .toUpTxt {
+                position: absolute;
+                left: 0;
+                padding: 0 50px;
+                transform: translateY(100vh);
+            }
         }
     }
 }
