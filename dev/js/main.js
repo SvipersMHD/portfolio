@@ -16,7 +16,7 @@ const homebtn = document.querySelector('.project__btn__home');
 const aboutMe = document.querySelector('.aboutme__presentation__txt');
 const btnToAbout = document.querySelector('.btnToAbout');
 const btnToMe = document.querySelector('.btnToMe');
-const txtToAbout = document.querySelector('.txtToAbout');
+const toAboutTxt = document.querySelector('.toAboutTxt');
 const txtToUp = document.querySelector('.toUpTxt');
 
 const linkToEnglish = document.querySelector(".eng");
@@ -33,23 +33,34 @@ btnToAbout.addEventListener(("click"),() => {
         y: 0, 
         duration: 1.5, 
         ease: "power4.out", 
-    }) } else {
-        gsap.to(aboutMe, {
-            y: 100 + "vh", 
-            duration: 1.5, 
-            ease: "power4.out", 
-        })
-    }
-    gsap.to(txtToAbout, {
-        y : -100 + "vh",
-        duration : 1.5,
-        ease : "power4.out"
+    })
+    gsap.to(toAboutTxt, {
+        y: -100 + "vh", 
+        duration: 1.5, 
+        ease: "power4.out", 
     })
     gsap.to(txtToUp, {
         y : 0,
         duration : 1.5,
         ease : "power4.out"
     })
+    } else {
+        gsap.to(aboutMe, {
+            y: 100 + "vh", 
+            duration: 1.5, 
+            ease: "power4.out", 
+        })
+        gsap.to(txtToUp, {
+            y : 100 + "vh",
+            duration : 1.5,
+            ease : "power4.in"
+        },">-2")
+        gsap.to(toAboutTxt, {
+            y: 0, 
+            duration: 1.5, 
+            ease : "power4.out",
+        },">-1")
+    }
     getBtnToAboutToggle = !getBtnToAboutToggle
 })
 
