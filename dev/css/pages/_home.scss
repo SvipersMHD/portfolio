@@ -241,7 +241,7 @@
                 position: absolute;
                 width: 90%;
                 background: $blanc;
-                transform: translateY(100vh);
+                transform: translateY(200vh);
 
                 .aboutme__wrapper {
                     display: flex;
@@ -330,6 +330,29 @@
             flex-direction: column;
         }
     }
+}
+@media screen and (max-width:1110px){
+    .role__photo {
+        flex-direction: column;
+    }
+    .role__photo__title {
+        align-self: flex-start;
+    }
+    img {
+        align-self: flex-end;
+    }
+    .aboutme__presentation__txt {
+        position: relative !important;
+        transform: translateY(0) !important;
+        width: 100% !important;
+    }
+    .presentation__txt {
+        gap: 50px;
+    }
+    .btnTo {
+        display: none !important;
+    }
+
 }
 @media screen and (max-width:1000px) {
     body {
