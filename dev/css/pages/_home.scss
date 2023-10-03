@@ -268,19 +268,27 @@
                 transition: .3s all ease-in-out;
                 z-index: 190;
                 overflow: hidden;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .toUpTxt {
+                position: absolute;
+                top: 0;
+                padding: 30px 0;
+                transform: translateY(100vh);
+                font-size: 30px;
             }
             .btnToAbout:hover {
                 background: white;
                 color: black;
                 transform: translateY(-25px);
-                font-weight: 600;
             }
-            .toUpTxt {
-                position: absolute;
-                left: 0;
-                padding: 30px 50px 0;
-                top: 0;
-                transform: translateY(100vh);
+            .toAboutTxt {
+                font-weight: bold;
+            }
+            .btnToAbout:hover .toUpTxt .fa-arrow-down {
+                color: black;
             }
         }
     }
@@ -334,9 +342,22 @@
 @media screen and (max-width:1110px){
     .role__photo {
         flex-direction: column;
+
+        img {
+            margin: 0 auto;
+        }
     }
     .role__photo__title {
-        align-self: flex-start;
+        align-self: center;
+        order: 2;
+        padding-top: 25px;
+
+        span {
+            text-align: center;
+        }
+        .role {
+            text-align: center;
+        }
     }
     img {
         align-self: flex-end;

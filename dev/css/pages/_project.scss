@@ -70,7 +70,7 @@
             position: absolute;
             
             img {
-                width: 82%;
+                width: 98%;
                 user-select: none;
             }
             .mobile {
@@ -172,43 +172,88 @@
                 color: black;
                 transition: .3s all ease-in-out;
                 background: white;
+                position: relative;
                 
                 &:hover {
                     background-color: black;
                     color: white;
                 }
             }
+            .unavailable {
+                background-color: black;
+                color: white;
+            }
+            .unavailable::before {
+                content: "";
+                width: 100%;
+                height: 100%;
+                background: rgba(255, 255, 255, 0.603);
+                position: absolute;
+                top: 0;
+                left: 0;
+                border-radius: 5px;
+                z-index: 150;
+            }
+            .unavailable::after {
+                content: "Le lien est indisponible pour le moment.";
+                width: 100%;
+                position: absolute;
+                bottom: -100%;
+                left: 0;
+                border-radius: 5px;
+                z-index: 150;
+                color: black;
+                font-family: $font;
+                font-size: 14px;
+            }
+            .unavailable.v-engl::after {
+                content: "Link unavailable at the moment.";
+            }
+            .unavailable.unavailable_git::after {
+                content: "Le lien vers le code n'est pas disponible en raison de confidentialité.";
+                bottom: -140%;
+            }
+            .unavailable.unavailable_git.v-engl::after {
+                content: "The link to the code is not available due to confidentiality reasons.";
+            }
+
         }
     }
     .out {
         position: fixed;
         width: 40%;
     }
-    .news {
+    .pomander {
         transform: translateY(-200vh);
-        width: 40%;
+    }
+    .mfm {
+        transform: translateX(200vw);
+    }
+    .keylegal {
+        transform: translateY(-200vh);
+    }
+    .news {
+        transform: translateX(-200vw);
     }
     .todo {
-        transform: translateX(-200vw);
-        width: 40%;
+        transform: translateY(-200vh);
     }
     .convertor {
-        transform: translateY(200vh);
-        width: 40%;
+        transform: translateX(200vw);
     }
     .food52 {
-        transform: translateX(200vw);
-        width: 40%;
+        transform: translateY(200vh);
     }
 }
 .fa-angle-left, .fa-angle-right {
     color: white;
     font-size: 50px;
-    padding: 150px 20px;
+    padding: 50px 20px;
     cursor: pointer;
     transition: .3s all ease-in-out;
     z-index: 100;
     position: absolute;
+    text-shadow: 0 0 15px black;
     
     &:hover {
         text-shadow: 0 0 15px $blanc;
@@ -229,7 +274,6 @@
     font-size: 50px;
     padding: 8px;
     cursor: pointer;
-    pointer-events: none;
     transition: .3s all ease-in-out;
     z-index: 100;
     
@@ -305,6 +349,8 @@
     
     .right__project {
         height: 70vh;
-        
+    }
+    .unavailable::after {
+        font-size: 12px !important;
     }
 }

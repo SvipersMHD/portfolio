@@ -220,6 +220,18 @@ const trainingTxt = document.querySelector(".project__txt .training")
 const trainingImg = document.querySelector(".project__screen .training")
 const trainingTech = document.querySelector(".project__tech .training")
 
+const pomanderTxt = document.querySelector(".project__txt .pomander")
+const pomanderImg = document.querySelector(".project__screen .pomander")
+const pomanderTech = document.querySelector(".project__tech .pomander")
+
+const mfmTxt = document.querySelector(".project__txt .mfm")
+const mfmImg = document.querySelector(".project__screen .mfm")
+const mfmTech = document.querySelector(".project__tech .mfm")
+
+const keylegalTxt = document.querySelector(".project__txt .keylegal")
+const keylegalImg = document.querySelector(".project__screen .keylegal")
+const keylegalTech = document.querySelector(".project__tech .keylegal")
+
 const newsTxt = document.querySelector(".project__txt .news")
 const newsImg = document.querySelector(".project__screen .news")
 const newsTech = document.querySelector(".project__tech .news")
@@ -235,14 +247,15 @@ const convertorTech = document.querySelector(".project__tech .convertor")
 const food52Txt = document.querySelector(".project__txt .food52")
 const food52Img = document.querySelector(".project__screen .food52")
 const food52Tech = document.querySelector(".project__tech .food52")
+
 // Fonction pour les screens + tech utilisé 
-function imgAndTechAnim(img, imgnNext, tech, techNext) {
+function imgAndTechAnim(img, imgNext, tech, techNext) {
     gsap.to(img, {
         duration: 0.5,
         x: -200 + "vw",
         ease: "power2.inOut",
     });
-    gsap.to(imgnNext, {
+    gsap.to(imgNext, {
         duration: 0.5,
         x: 0,
         ease: "power2.inOut",
@@ -262,22 +275,22 @@ function imgAndTechAnim(img, imgnNext, tech, techNext) {
 function imgAndTechAnimReverse(img, imgnNext, tech, techNext) {
     gsap.to(img, {
         duration: 0.5,
-        x: 0,
+        x: 200 + "vw",
         ease: "power2.inOut",
     });
     gsap.to(imgnNext, {
         duration: 0.5,
-        x: 100 + "vw",
+        x: 0,
         ease: "power2.inOut",
     });
     gsap.to(tech, {
         duration: 0.5,
-        x: 0,
+        x: -200 + "vw",
         ease: "power2.inOut",
     });
     gsap.to(techNext, {
         duration: 0.5,
-        x: -200 + "vw",
+        x: 0,
         ease: "power2.inOut",
     });
 }
@@ -306,203 +319,113 @@ function animationTexteX(txtOld,slidingFrom,txtNew,slidingReverse){
         ease: "power2.inOut",
     });
 }
-// Fonction pour les animations + retour 
-// function action1() {
-//     animationTexteY(trainingTxt,100,newsTxt,0)
-//     imgAndTechAnim(trainingImg,newsImg,trainingTech,newsTech)
-// }
-// function action1Reverse() {
-//     animationTexteY(trainingTxt,0,newsTxt,-200)
-//     imgAndTechAnimReverse(trainingImg,newsImg,trainingTech,newsTech)
-// }
-// function action2() {
-//     animationTexteX(newsTxt,200,todoTxt,0)
-//     imgAndTechAnim(newsImg,todoImg,newsTech,todoTech)
-// }
-// function action2Reverse() {
-//     animationTexteX(newsTxt,0,todoTxt,-200)
-//     imgAndTechAnimReverse(newsImg,todoImg,newsTech,todoTech)
-// }
-// function action3() {
-//     animationTexteY(todoTxt,-200,convertorTxt,0)
-//     imgAndTechAnim(todoImg,convertorImg,todoTech,convertorTech)
-// }
-// function action3Reverse() {
-//     animationTexteY(todoTxt,0,convertorTxt,200)
-//     imgAndTechAnimReverse(todoImg,convertorImg,todoTech,convertorTech)
-// }
-// function action4() {
-//     animationTexteX(convertorTxt,-200,food52Txt,0)
-//     imgAndTechAnim(convertorImg,food52Img,convertorTech,food52Tech)
-// }
-// function action4Reverse() {
-//     animationTexteX(convertorTxt,0,food52Txt,200)
-//     imgAndTechAnimReverse(convertorImg,food52Img,convertorTech,food52Tech)
-// }
-// function actionY(textActif,textActifPos,textNext,textNextPos){
-//     animationTexteY(textActif,textActifPos,textNext,textNextPos)
-//     imgAndTechAnim(trainingImg,newsImg,trainingTech,newsTech)
-// }
-// function actionX(textActif,textActifPos,textNext,textNextPos){
-//     animationTexteX(textActif,textActifPos,textNext,textNextPos)
-//     imgAndTechAnim(trainingImg,newsImg,trainingTech,newsTech)
-// }
-// // Lancement des animations + conditions pour effet retour 
-// let isAction1 = false;
-// let isAction2 = false;
-// let isAction3 = false;
-// let isAction4 = false;
 
-// slideRight.addEventListener("click", () => {
-//     if (isAction1) {
-//         actionX(newsTxt,200,todoTxt,0);
-//         isAction1 = false;
-//         isAction2 = true;
-//         isAction3 = false;
-//         isAction4 = false;
-//     } else if (isAction2) {
-//         actionY(todoTxt,-200,convertorTxt,0);
-//         isAction1 = false;
-//         isAction2 = false;
-//         isAction3 = true;
-//         isAction4 = false;
-//     } else if (isAction3) {
-//         actionX(convertorTxt,-200,food52Txt,0);
-//         isAction1 = false;
-//         isAction2 = false;
-//         isAction3 = false;
-//         isAction4 = true;
-//         slideRight.classList.add("isActive")
-//     } else if(isAction4) {
-//     }
-//     else {
-//         actionY(trainingTxt,100,newsTxt,0);
-//         isAction1 = true;
-//         isAction2 = false;
-//         isAction3 = false;
-//         isAction4 = false;
-//         slideLeft.classList.remove("isActive")
-//     }
-// });
-// slideLeft.addEventListener("click", () => {
-//     if (isAction4) {
-//         action4Reverse();
-//         isAction4 = false;
-//         isAction3 = true;
-//         isAction2 = false;
-//         isAction1 = false;
-//         slideRight.classList.remove("isActive")
-//     } else if (isAction3) {
-//         action3Reverse();
-//         isAction3 = false;
-//         isAction2 = true;
-//         isAction1 = false;
-//     } else if (isAction2) {
-//         action2Reverse();
-//         isAction2 = false;
-//         isAction1 = true;
-//         isAction3 = false;
-//     } else if (isAction1) {
-//         action1Reverse();
-//         isAction1 = false;
-//         isAction2 = false;
-//         isAction3 = false;
-//         slideLeft.classList.add("isActive")
-//     }
-// });
-
-
-// Créez un tableau avec vos éléments et leurs paramètres
-// const actions = [
-//     { 
-//         pos: "y",
-//         textActif: trainingTxt,
-//         textActifPos: 100,
-//         textNext: newsTxt,
-//         textNextPos: 0,
-//         imgAndTechAnimFunc: () => imgAndTechAnim(trainingImg, newsImg, trainingTech, newsTech),
-//         imgAndTechAnimReverseFunc: () => imgAndTechAnimReverse(trainingImg, newsImg, trainingTech, newsTech),
-//     },
-//     {
-//         pos: "x",
-//         textActif: newsTxt,
-//         textActifPos: 200,
-//         textNext: todoTxt,
-//         textNextPos: 0,
-//         imgAndTechAnimFunc: () => imgAndTechAnim(newsImg, todoImg, newsTech, todoTech),
-//         imgAndTechAnimReverseFunc: () => imgAndTechAnimReverse(newsImg, todoImg, newsTech, todoTech),
-//     },
-//     {
-//         pos: "y",
-//         textActif: todoTxt,
-//         textActifPos: -200,
-//         textNext: convertorTxt,
-//         textNextPos: 0,
-//         imgAndTechAnimFunc: () => imgAndTechAnim(todoImg, convertorImg, todoTech, convertorTech),
-//         imgAndTechAnimReverseFunc: () => imgAndTechAnimReverse(todoImg, convertorImg, todoTech, convertorTech),
-//     },
-//     {
-//         pos: "x",
-//         textActif: convertorTxt,
-//         textActifPos: -200,
-//         textNext: food52Txt,
-//         textNextPos: 0,
-//         imgAndTechAnimFunc: () => imgAndTechAnim(convertorImg, food52Img, convertorTech, food52Tech),
-//         imgAndTechAnimReverseFunc: () => imgAndTechAnimReverse(convertorImg, food52Img, convertorTech, food52Tech),
-//     },
-// ];
+// tableau avec chaque projet 
 const actions = [
     {
         pos: "y",
         textActif: trainingTxt,
-        textActifPos: 100,
+        textActifPos: 200,
         textNextPos: 0,
+        textReversePos: -200,
+        img: trainingImg,
+        tech: trainingTech
     },
     {
         pos: "x",
-        textActif: newsTxt,
-        textActifPos: 200,
+        textActif: pomanderTxt,
+        textActifPos: -200,
         textNextPos: 0,
+        textReversePos: -200,
+        img: pomanderImg,
+        tech: pomanderTech
     },
     {
         pos: "y",
-        textActif: todoTxt,
-        textActifPos: -200,
+        textActif: mfmTxt,
+        textActifPos: 200,
         textNextPos: 0,
+        textReversePos: 200,
+        img: mfmImg,
+        tech: mfmTech
     },
     {
         pos: "x",
+        textActif: keylegalTxt,
+        textActifPos: 200,
+        textNextPos: 0,
+        textReversePos: -200,
+        img: keylegalImg,
+        tech: keylegalTech
+    },
+    {
+        pos: "y",
+        textActif: newsTxt,
+        textActifPos: 200,
+        textNextPos: 0,
+        textReversePos: -200,
+        img: newsImg,
+        tech: newsTech
+    },
+    {
+        pos: "x",
+        textActif: todoTxt,
+        textActifPos: -200,
+        textNextPos: 0,
+        textReversePos: -200,
+        img: todoImg,
+        tech: todoTech
+    },
+    {
+        pos: "y",
         textActif: convertorTxt,
         textActifPos: -200,
         textNextPos: 0,
+        textReversePos: 200,
+        img: convertorImg,
+        tech: convertorTech
     },
     {
         pos: "x",
         textActif: food52Txt,
         textActifPos: -200,
         textNextPos: 0,
+        textReversePos: 200,
+        img: food52Img,
+        tech: food52Tech
     },
 ];
 
-function actionY(textActif,textActifPos,textNext,textNextPos){
+let reverse = true
+
+function actionY(textActif,textActifPos,textNext,textNextPos,img,imgNext,tech,nextTech){
     animationTexteY(textActif,textActifPos,textNext,textNextPos)
-    imgAndTechAnim(trainingImg,newsImg,trainingTech,newsTech)
+    if(reverse) {
+        imgAndTechAnim(img,imgNext,tech,nextTech)
+    } else {
+        imgAndTechAnimReverse(img,imgNext,tech,nextTech)
+    }
 }
-function actionX(textActif,textActifPos,textNext,textNextPos){
+function actionX(textActif,textActifPos,textNext,textNextPos,img,imgNext,tech,nextTech){
     animationTexteX(textActif,textActifPos,textNext,textNextPos)
-    imgAndTechAnim(trainingImg,newsImg,trainingTech,newsTech)
+    if(reverse) {
+        imgAndTechAnim(img,imgNext,tech,nextTech)
+    } else {
+        imgAndTechAnimReverse(img,imgNext,tech,nextTech)
+    }
 }
 
 let actionActuelle = 0
 
 slideRight.addEventListener("click", () => {
     const currentAction = actions[actionActuelle];
+    const nextAction = actions[actionActuelle + 1];
     // fait defiler le contenu
+    reverse = true 
     if(currentAction.pos === "y"){
-        const nextAction = actions[actionActuelle + 1];
-        actionY(currentAction.textActif, currentAction.textActifPos, nextAction.textActif, nextAction.textNextPos);
+        actionY(currentAction.textActif, currentAction.textActifPos, nextAction.textActif, nextAction.textNextPos, currentAction.img, nextAction.img, currentAction.tech,  nextAction.tech);
     } else {
-        actionX(currentAction.textActif, currentAction.textActifPos, currentAction.textNext, currentAction.textNextPos);
+        actionX(currentAction.textActif, currentAction.textActifPos, nextAction.textActif, nextAction.textNextPos, currentAction.img, nextAction.img, currentAction.tech,  nextAction.tech);
     }
     // desactive la flèche à droite à la fin du tableau 
     if(actionActuelle === actions.length-1){
@@ -511,43 +434,44 @@ slideRight.addEventListener("click", () => {
     // +1 au tableau 
     if(actionActuelle < actions.length - 1){
         actionActuelle ++
-    }
-    else {
+    } else {
         actionActuelle = actions.length;
     } 
+    slideRight.classList.toggle("isActive", actionActuelle === actions.length - 1);
     // active la flèche vers la gauche
-    if(actionActuelle > 0){
-        slideLeft.classList.remove("isActive")
-    }
+    slideLeft.classList.remove("isActive")
 })
 slideLeft.addEventListener("click", () => {
-
+    reverse = false 
     const currentAction = actions[actionActuelle];
-    console.log(currentAction);
+    const nextAction = actions[actionActuelle - 1];
     // fait defiler le contenu
-    if (currentAction.pos === "y") {
-        actionY(currentAction.textNext, currentAction.textNextPos, currentAction.textActif, currentAction.textActifPos);
+    if(nextAction.pos === "y"){
+        actionY(currentAction.textActif, currentAction.textReversePos, nextAction.textActif, nextAction.textNextPos, currentAction.img, nextAction.img, currentAction.tech,  nextAction.tech);
     } else {
-        actionX(currentAction.textNext, currentAction.textNextPos, currentAction.textActif, currentAction.textActifPos);
+        actionX(currentAction.textActif, currentAction.textReversePos, nextAction.textActif, nextAction.textNextPos, currentAction.img, nextAction.img, currentAction.tech,  nextAction.tech);
+    }
+    // -1 au tableau 
+    if(actionActuelle > 0){
+        actionActuelle -= 1
     }
     // desactive la flèche à gauche à la fin du tableau 
     if(actionActuelle === 0){
-        slideRight.classList.add("isActive")
+        slideLeft.classList.add("isActive")
     }
-    // +1 au tableau 
-    if(actionActuelle > 0){
-        actionActuelle --
-    }
-    else {
-        actionActuelle = actions.length;
-    } 
-    // active la flèche vers la droite
-    if(actionActuelle === length-2){
-        slideLeft.classList.remove("isActive")
+    if(actionActuelle != actions.length -1) {
+        slideRight.classList.remove("isActive")
     }
 })
 
-
-
-
-
+// fancybox (lightbox) 
+Fancybox.bind("[data-fancybox]", {
+    buttons: ["thumbs"],
+    Toolbar: {
+        display: {
+            left: [],
+            middle: ["prev", "infobar", "next"],
+            right: ["close"],
+        },
+    },
+});
