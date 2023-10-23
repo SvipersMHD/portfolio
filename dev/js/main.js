@@ -1,3 +1,19 @@
+console.log("Eh non, il n'y a pas d'erreurs ! :D");
+// Enregistre l'heure de début au moment où le script est exécuté
+const debutChargement = new Date();
+
+window.addEventListener('load', () => {
+  // Enregistre l'heure une fois que tout le site est chargé
+  const finChargement = new Date();
+
+  // Calcule la durée de chargement en millisecondes
+  const dureeChargement = finChargement - debutChargement;
+
+  // Convertit la durée en secondes
+  const dureeEnSecondes = dureeChargement / 1000;
+
+  console.log(`Le site a été entièrement chargé en ${dureeEnSecondes} secondes.`);
+});
 const wavesL = [...document.querySelectorAll('.wave__left div')].reverse();
 const wavesR = document.querySelectorAll('.wave__right div');
 const wavesLWrapper = document.querySelector('.wave__left');
@@ -11,7 +27,6 @@ const project = document.querySelector('.project');
 const home = document.querySelector('.home');
 const header = document.querySelector('.header');
 const homebtn = document.querySelector('.project__btn__home');
-
 
 const aboutMe = document.querySelector('.aboutme__presentation__txt');
 const btnToAbout = document.querySelector('.btnToAbout');
@@ -64,7 +79,7 @@ btnToAbout.addEventListener(("click"),() => {
     getBtnToAboutToggle = !getBtnToAboutToggle
 })
 
-
+let isPageHome = true
 // Fonction de l'animation vers la partie my project
 function goProject(){
     setTimeout(function() {
@@ -75,7 +90,7 @@ function goProject(){
             window.scrollTo(0, 0);
         }
     }, 1000);
-
+    isPageHome = false
 }
 //Fonction pour l'animation retour vers le home 
 function goHome(){
@@ -84,6 +99,7 @@ function goHome(){
         home.style.display = "flex";
         header.style.display = "flex";
     }, 1000);
+    isPageHome = true
 }
 // Fonction pour cacher les waves 
 function widthWaves(){
@@ -158,7 +174,7 @@ function changeEngToFr() {
         versionEng.classList.toggle("isActive");
     });
 }
-// lancement au bouton home 
+// lancement vers project depuis home
 btnProjectHome.addEventListener("click", () => {
     animation();
     goProject();
@@ -176,17 +192,19 @@ btnGithub.forEach(btnGithubAll => {
         window.open('https://github.com/SvipersMHD', '_blank');
     });
 })
-// lancement btn my project 
+// lancement vers home depuis project
 homebtn.addEventListener("click", () => {
     animation();
     goHome()
     widthWaves()
-    askScroll.classList.remove('isActive')
-    setTimeout(function() {
-        askScroll.style.opacity = 1;
-    }, 1000);
 });
-
+document.addEventListener("mousedown", (e) => {
+    if (e.button === 3 && isPageHome === false) {
+        animation();
+        goHome()
+        widthWaves()
+    }
+});
 // vers la version eng 
 linkToEnglish.addEventListener("click", () => {
     if (!vEng.length || !vEng[0].classList.contains("isActive")) {
@@ -213,12 +231,16 @@ linkToFrench.addEventListener("click", () => {
     }
 });
 // Partie project animation 
-const slideLeft = document.querySelector(".fa-angle-left")
-const slideRight = document.querySelector(".fa-angle-right")
+const slideLeft = document.querySelector(".prev_btn")
+const slideRight = document.querySelector(".next_btn")
 
 const trainingTxt = document.querySelector(".project__txt .training")
 const trainingImg = document.querySelector(".project__screen .training")
 const trainingTech = document.querySelector(".project__tech .training")
+
+const dofusTxt = document.querySelector(".project__txt .dofus")
+const dofusImg = document.querySelector(".project__screen .dofus")
+const dofusTech = document.querySelector(".project__tech .dofus")
 
 const pomanderTxt = document.querySelector(".project__txt .pomander")
 const pomanderImg = document.querySelector(".project__screen .pomander")
@@ -247,6 +269,10 @@ const convertorTech = document.querySelector(".project__tech .convertor")
 const food52Txt = document.querySelector(".project__txt .food52")
 const food52Img = document.querySelector(".project__screen .food52")
 const food52Tech = document.querySelector(".project__tech .food52")
+
+const portfolioTxt = document.querySelector(".project__txt .portfolio")
+const portfolioImg = document.querySelector(".project__screen .portfolio")
+const portfolioTech = document.querySelector(".project__tech .portfolio")
 
 // Fonction pour les screens + tech utilisé 
 function imgAndTechAnim(img, imgNext, tech, techNext) {
@@ -333,6 +359,15 @@ const actions = [
     },
     {
         pos: "x",
+        textActif: dofusTxt,
+        textActifPos: 200,
+        textNextPos: 0,
+        textReversePos: -200,
+        img: dofusImg,
+        tech: dofusTech
+    },
+    {
+        pos: "y",
         textActif: pomanderTxt,
         textActifPos: -200,
         textNextPos: 0,
@@ -341,25 +376,25 @@ const actions = [
         tech: pomanderTech
     },
     {
-        pos: "y",
+        pos: "x",
         textActif: mfmTxt,
-        textActifPos: 200,
+        textActifPos: -200,
         textNextPos: 0,
         textReversePos: 200,
         img: mfmImg,
         tech: mfmTech
     },
     {
-        pos: "x",
+        pos: "y",
         textActif: keylegalTxt,
         textActifPos: 200,
         textNextPos: 0,
-        textReversePos: -200,
+        textReversePos: 200,
         img: keylegalImg,
         tech: keylegalTech
     },
     {
-        pos: "y",
+        pos: "x",
         textActif: newsTxt,
         textActifPos: 200,
         textNextPos: 0,
@@ -368,7 +403,7 @@ const actions = [
         tech: newsTech
     },
     {
-        pos: "x",
+        pos: "y",
         textActif: todoTxt,
         textActifPos: -200,
         textNextPos: 0,
@@ -377,7 +412,7 @@ const actions = [
         tech: todoTech
     },
     {
-        pos: "y",
+        pos: "x",
         textActif: convertorTxt,
         textActifPos: -200,
         textNextPos: 0,
@@ -386,13 +421,22 @@ const actions = [
         tech: convertorTech
     },
     {
-        pos: "x",
+        pos: "y",
         textActif: food52Txt,
         textActifPos: -200,
         textNextPos: 0,
         textReversePos: 200,
         img: food52Img,
         tech: food52Tech
+    },
+    {
+        pos: "x",
+        textActif: portfolioTxt,
+        textActifPos: 200,
+        textNextPos: 0,
+        textReversePos: 200,
+        img: portfolioImg,
+        tech: portfolioTech
     },
 ];
 
@@ -465,6 +509,7 @@ slideLeft.addEventListener("click", () => {
 })
 
 // fancybox (lightbox) 
+
 Fancybox.bind("[data-fancybox]", {
     buttons: ["thumbs"],
     Toolbar: {
@@ -474,4 +519,101 @@ Fancybox.bind("[data-fancybox]", {
             right: ["close"],
         },
     },
+    thumbs: {
+        open: true, // Ouvrir la galerie de vignettes par défaut
+        count: 2, 
+    },
+    carousel: {
+        open: true, // Ouvrir le carroussel par défaut
+    },
 });
+new Carousel(
+    document.getElementById('myCarousel'),
+    {
+        Dots: false,
+    },
+    {
+        Thumbs,
+    }
+    );
+new Carousel(
+    document.getElementById('myCarousel2'),
+    {
+        Dots: false,
+    },
+    {
+        Thumbs,
+    }
+    );
+new Carousel(
+    document.getElementById('myCarousel3'),
+    {
+        Dots: false,
+    },
+    {
+        Thumbs,
+    }
+    );
+new Carousel(
+    document.getElementById('myCarousel4'),
+    {
+        Dots: false,
+    },
+    {
+        Thumbs,
+    }
+    );
+new Carousel(
+    document.getElementById('myCarousel5'),
+    {
+        Dots: false,
+    },
+    {
+        Thumbs,
+    }
+    );
+new Carousel(
+    document.getElementById('myCarousel6'),
+    {
+        Dots: false,
+    },
+    {
+        Thumbs,
+    }
+    );
+new Carousel(
+    document.getElementById('myCarousel7'),
+    {
+        Dots: false,
+    },
+    {
+        Thumbs,
+    }
+    );
+new Carousel(
+    document.getElementById('myCarousel8'),
+    {
+        Dots: false,
+    },
+    {
+        Thumbs,
+    }
+    );
+new Carousel(
+    document.getElementById('myCarousel9'),
+    {
+        Dots: false,
+    },
+    {
+        Thumbs,
+    }
+    );
+new Carousel(
+    document.getElementById('myCarousel10'),
+    {
+        Dots: false,
+    },
+    {
+        Thumbs,
+    }
+    );

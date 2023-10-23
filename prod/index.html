@@ -10,19 +10,27 @@
    rel="stylesheet"
    href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css"
    />
+   <link
+   rel="stylesheet"
+   href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/carousel/carousel.thumbs.css"
+   />
+   <link
+   rel="stylesheet"
+   href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/carousel/carousel.css"
+   />
    <title>Zohaib Muhammad portfolio</title>
    <script src="https://kit.fontawesome.com/10664defb7.js" crossorigin="anonymous"></script>
    <link rel="stylesheet" href="css/styles.min.css">
 </head>
 <!-- Google tag (gtag.js)  -->
-<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-TFT9V99ZRM"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TFT9V99ZRM"></script>
    <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       
       gtag('config', 'G-TFT9V99ZRM');
-</script> -->
+</script>
 
 <body>
    <div class="wave__right wave">
@@ -101,9 +109,13 @@
                         My goal is to become an experienced developer and work on projects that have a positive impact
                         on end-users.
                      </p>
-                     <div class="btnToAbout btnTo">
-                        <div class="toAboutTxt">À propos de moi</div>
-                        <div class="toUpTxt"><i class="fa-solid fa-arrow-down"></i></div>
+                     <div class="btnToAbout_wrapper">
+                        <div class="btnToAbout btnTo gradient-border">
+                           <div class="v-fr isActive toAboutTxt">À propos de moi</div>
+                           <div class="v-engl toAboutTxt">About me</div>
+                           <div class="toUpTxt"><i class="fa-solid fa-arrow-down"></i></div>
+                        </div>
+                        <div class="btnToAboutBorder"></div>
                      </div>
                   </div>
                   <div class="aboutme__presentation__txt" id="bottom">
@@ -203,6 +215,31 @@
                   </a>
                </div>
             </div>
+            <div class="project__txt__wrapper out dofus">
+               <h3>DofusStuffSimulator</h3>
+               <div class="projet__description">
+                  <p class="v-fr isActive ">
+                     Ce site représente mon tout premier projet en React. Il s'agit d'un simulateur d'équipement destiné au jeu Dofus. Il offre aux joueurs la possibilité d'essayer différents équipements pour explorer leurs caractéristiques et synergies.
+                  </p>
+                  <p class="v-fr isActive ">
+                     Ce projet m'a permis de m'entraîner sur React, en particulier les bases telles que la gestion des états, la mise en place de routes, ainsi que l'intégration d'API. Bien qu'il y ait encore un large potentiel d'amélioration, ce projet m'a confronté à mes premières difficultés avec React, ce qui a considérablement renforcé mes compétences.
+                  </p>
+                  <p class="v-engl">
+                     This site represents my very first project in React. It is an equipment simulator for the game Dofus, allowing players to try different gear to explore their characteristics and synergies.
+                  </p>
+                  <p class="v-engl">
+                     This project provided me with practice in React, especially the fundamentals like managing states, setting up routes, and integrating APIs. While there is still plenty of room for improvement, this project challenged me with my initial difficulties in React, thus enabling significant progress.
+                  </p>
+               </div>
+               <div class="project__links">
+                  <a target="_blank" href="https://github.com/SvipersMHD/tff-dofusbook"><i
+                     class="fa-brands fa-github"></i>
+                  </a>
+                  <a target="_blank" href="https://dofusstuffsimulator.netlify.app/"><i
+                     class="fa-solid fa-arrow-up-right-from-square"></i>
+                  </a>
+               </div>
+            </div>
             <div class="project__txt__wrapper out pomander">
                <h3>Hotel Pomander</h3>
                <div class="projet__description">
@@ -214,14 +251,17 @@
                   </p>
                </div>
                <div class="project__links">
-                  <a class="unavailable unavailable_git v-fr isActive" href="#"><i
-                     class="fa-brands fa-github"></i>
-                  </a>
-                  <a class="unavailable unavailable_git v-engl" href="#"><i
-                     class="fa-brands fa-github"></i>
-                  </a>
-                  <a target="_blank" href="https://hotelpomander.de/"><i
+                  <div class="project_links_content">
+                     <a class="unavailable unavailable_git" href="#"><i
+                        class="fa-brands fa-github"></i>
+                     </a>
+                     <div class="unavailable_text v-fr isActive">Le lien vers le code n'est pas disponible en raison de confidentialité.</div>
+                     <div class="unavailable_text v-engl">The link to the code is not available due to confidentiality reasons.</div>
+                  </div>
+                  <div class="project_links_content">
+                     <a target="_blank" href="https://hotelpomander.de/"><i
                         class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                  </div>
                </div>
             </div>
             <div class="project__txt__wrapper out mfm">
@@ -235,14 +275,18 @@
                   </p>
                </div>
                <div class="project__links">
-                  <a class="unavailable unavailable_git v-fr isActive" href="#"><i
-                     class="fa-brands fa-github"></i>
-                  </a>
-                  <a class="unavailable unavailable_git v-engl" href="#"><i
-                     class="fa-brands fa-github"></i>
-                  </a>
-                  <a target="_blank" href="https://mfmdigital.com/fr/"><i
-                        class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                  <div class="project_links_content">
+                     <a class="unavailable unavailable_git" href="#"><i
+                        class="fa-brands fa-github"></i>
+                     </a>
+                     <div class="unavailable_text v-fr isActive">Le lien vers le code n'est pas disponible en raison de confidentialité.</div>
+                     <div class="unavailable_text v-engl">The link to the code is not available due to confidentiality reasons.</div>
+                  </div>
+                  <div class="project_links_content">
+                     <a target="_blank" href="https://mfmdigital.com/fr/"><i
+                        class="fa-solid fa-arrow-up-right-from-square"></i>
+                     </a>
+                  </div>
                </div>
             </div>
             <div class="project__txt__wrapper out keylegal">
@@ -262,18 +306,20 @@
                   </p>
                </div>
                <div class="project__links">
-                  <a class="unavailable unavailable_git v-fr isActive" href="#"><i
-                     class="fa-brands fa-github"></i>
-                  </a>
-                  <a class="unavailable unavailable_git v-engl" href="#"><i
-                     class="fa-brands fa-github"></i>
-                  </a>
-                  <a class="unavailable v-fr isActive" href="#"><i
-                     class="fa-solid fa-arrow-up-right-from-square"></i>
-                  </a>
-                  <a class="unavailable v-engl" href="#"><i
-                     class="fa-solid fa-arrow-up-right-from-square"></i>
-                  </a>
+                  <div class="project_links_content">
+                     <a class="unavailable unavailable_git" href="#"><i
+                        class="fa-brands fa-github"></i>
+                     </a>
+                     <div class="unavailable_text v-fr isActive">Le lien vers le code n'est pas disponible en raison de confidentialité.</div>
+                     <div class="unavailable_text v-engl">The link to the code is not available due to confidentiality reasons.</div>
+                  </div>
+                  <div class="project_links_content">
+                     <a class="unavailable" href="#"><i
+                        class="fa-solid fa-arrow-up-right-from-square"></i>
+                     </a>
+                     <div class="unavailable_text v-fr isActive">Le lien est indisponible pour le moment.</div>
+                     <div class="unavailable_text v-engl">Link unavailable at the moment.</div>
+                  </div>
                </div>
             </div>
             <div class="project__txt__wrapper out news">
@@ -377,125 +423,227 @@
                         class="fa-solid fa-arrow-up-right-from-square"></i></a>
                </div>
             </div>
+            <div class="project__txt__wrapper out portfolio">
+               <h3 class="v-fr isActive">Mon portfolio</h3>
+               <h3 class="v-engl">My portfolio</h3>
+               <div class="projet__description">
+                  <p class="v-fr isActive ">
+                     Pour conclure, je vous présente l'un de mes projets les plus longs et aboutis, mon portfolio. Tout au long de son développement, j'ai apporté des améliorations en utilisant les nouvelles compétences que j'ai acquises.
+                  </p>
+                  <p class="v-fr isActive ">
+                     L'objectif de mon portfolio est de présenter mes compétences et de mettre en lumière mes projets. Il est également le reflet de mon engagement à toujours améliorer et perfectionner mon travail. Je suis ouvert à de nouvelles opportunités et collaborations, alors n'hésitez pas à me contacter si vous souhaitez discuter de projets passionnants.
+                  </p>
+                  <p class="v-engl">
+                     To wrap up, I present to you one of my most extensive and accomplished projects, my portfolio. Throughout its development, I've made enhancements using the new skills I've acquired.
+                  </p>
+                  <p class="v-engl">
+                     The purpose of my portfolio is to showcase my skills and highlight my projects. It also reflects my commitment to continuously enhance and refine my work. I'm open to new opportunities and collaborations, so please feel free to reach out if you'd like to discuss exciting projects.
+                  </p>
+               </div>
+               <div class="project__links">
+                  <a target="_blank" href="https://github.com/SvipersMHD/food52"><i class="fa-brands fa-github"></i></a>
+               </div>
+            </div>
          </div>
          <div class="right__project">
-            <i class="fa-solid fa-angle-left isActive"></i>
+            <!-- <i class="fa-solid fa-angle-left isActive"></i> -->
             <div class="project__screen">
-               <!-- <div class="bar bar__first"></div> -->
-               <!-- <div class="project__screen__box training">
-                  <img src="img/training.jpg" alt="">
-                  <img class="mobile" src="img/trainning__mobile.png" alt="">
-               </div> -->
-               <a class="project__screen__box training" data-fancybox="project1" href="img/training.jpg">
-                  <img src="img/training.jpg" />
-                  <img class="mobile" src="img/trainning__mobile.png" alt="">
-               </a>
-               <div style="display: none;">
-                  <a data-fancybox="project1" href="img/training2.jpg">
-                     <img src="img/training2.jpg" />
-                  </a>
-                  <a data-fancybox="project1" href="img/training3.jpg">
-                     <img src="img/training3.jpg" />
-                  </a>
-                  <a data-fancybox="project1" href="img/training4.jpg">
-                     <img src="img/training4.jpg" />
-                  </a>
-                  <a data-fancybox="project1" href="img/training5.jpg">
-                     <img src="img/training5.jpg" />
-                  </a>
-                  <a data-fancybox="project1" href="img/training6.jpg">
-                     <img src="img/training6.jpg" />
-                  </a>
-                  <a data-fancybox="project1" href="img/training7.jpg">
-                     <img src="img/training7.jpg" />
-                  </a>
+               <div class="project__screen__box training">
+                  <div class="f-carousel" id="myCarousel">
+                     <div class="f-carousel__slide" data-thumb-src="img/training.jpg" data-fancybox="training" data-src="img/training.jpg">
+                        <img src="img/training.jpg"/>
+                     </div>
+                     <div class="f-carousel__slide" data-thumb-src="img/training2.jpg" data-fancybox="training" data-src="img/training2.jpg">
+                        <img src="img/training2.jpg"/>
+                     </div>
+                     <div class="f-carousel__slide" data-thumb-src="img/training3.jpg" data-fancybox="training" data-src="img/training3.jpg">
+                        <img src="img/training3.jpg"/>
+                     </div>
+                     <div class="f-carousel__slide" data-thumb-src="img/training4.jpg" data-fancybox="training" data-src="img/training4.jpg">
+                        <img src="img/training4.jpg"/>
+                     </div>
+                     <div class="f-carousel__slide" data-thumb-src="img/training-mobile.jpg" data-fancybox="training" data-src="img/training-mobile.jpg">
+                        <img class="mobil_img" src="img/training-mobile.jpg"/>
+                     </div>
+                     <div class="f-carousel__slide" data-thumb-src="img/training5.jpg" data-fancybox="training" data-src="img/training5.jpg">
+                        <img class="mobil_img" src="img/training5.jpg"/>
+                     </div>
+                     <div class="f-carousel__slide" data-thumb-src="img/training6.jpg" data-fancybox="training" data-src="img/training6.jpg">
+                        <img class="mobil_img" src="img/training6.jpg"/>
+                     </div>
+                     <div class="f-carousel__slide" data-thumb-src="img/training7.jpg" data-fancybox="training" data-src="img/training7.jpg">
+                        <img class="mobil_img" src="img/training7.jpg"/>
+                     </div>
+                  </div>
                </div>
-
-               <a class="project__screen__box pomander out" data-fancybox="project-pomander" href="img/pomander.jpg">
-                  <img src="img/pomander.jpg" alt="">
-               </a>
-               <div style="display: none;">
-                  <a data-fancybox="project-pomander" href="img/pomander2.jpg">
-                     <img src="img/pomander2.jpg" />
-                  </a>
-                  <a data-fancybox="project-pomander" href="img/pomander3.jpg">
-                     <img src="img/pomander3.jpg" />
-                  </a>
+               <div class="project__screen__box dofus out">
+                  <div class="f-carousel" id="myCarousel9">
+                     <div class="f-carousel__slide" data-thumb-src="img/dofus.jpg" data-fancybox="dofus" data-src="img/dofus.jpg">
+                        <img src="img/dofus.jpg"/>
+                     </div>
+                     <div class="f-carousel__slide" data-thumb-src="img/dofus2.jpg" data-fancybox="dofus" data-src="img/dofus2.jpg">
+                        <img src="img/dofus2.jpg"/>
+                     </div>
+                     <div class="f-carousel__slide" data-thumb-src="img/dofus3.jpg" data-fancybox="dofus" data-src="img/dofus3.jpg">
+                        <img src="img/dofus3.jpg"/>
+                     </div>
+                     <div class="f-carousel__slide" data-thumb-src="img/dofus4.jpg" data-fancybox="dofus" data-src="img/dofus4.jpg">
+                        <img class="mobil_img" src="img/dofus4.jpg"/>
+                     </div>
+                  </div>
                </div>
-
-               <a class="project__screen__box mfm out" data-fancybox="project-mfm" href="img/mfm.jpg">
-                  <img src="img/mfm.jpg" alt="">
-               </a>
-               <div style="display: none;">
-                  <a data-fancybox="project-mfm" href="img/mfm2.jpg">
-                     <img src="img/mfm2.jpg" />
-                  </a>
-                  <a data-fancybox="project-mfm" href="img/mfm3.jpg">
-                     <img src="img/mfm3.jpg" />
-                  </a>
-                  <a data-fancybox="project-mfm" href="img/mfm4.jpg">
-                     <img src="img/mfm4.jpg" />
-                  </a>
+               <div class="project__screen__box pomander out">
+                  <div class="f-carousel" id="myCarousel2">
+                     <div class="f-carousel__slide" data-thumb-src="img/pomander.jpg" data-fancybox="pomander" data-src="img/pomander.jpg">
+                        <img src="img/pomander.jpg"/>
+                     </div>
+                     <div class="f-carousel__slide" data-thumb-src="img/pomander2.jpg" data-fancybox="pomander" data-src="img/pomander2.jpg">
+                        <img src="img/pomander2.jpg"/>
+                     </div>
+                     <div class="f-carousel__slide" data-thumb-src="img/pomander4.jpg" data-fancybox="pomander" data-src="img/pomander4.jpg">
+                        <img src="img/pomander4.jpg"/>
+                     </div>
+                     <div class="f-carousel__slide" data-thumb-src="img/pomander5.jpg" data-fancybox="pomander" data-src="img/pomander5.jpg">
+                        <img src="img/pomander5.jpg"/>
+                     </div>
+                     <div class="f-carousel__slide" data-thumb-src="img/pomander3.jpg" data-fancybox="pomander" data-src="img/pomander3.jpg">
+                        <img class="mobil_img" src="img/pomander3.jpg"/>
+                     </div>
+                     <div class="f-carousel__slide" data-thumb-src="img/pomander6.jpg" data-fancybox="pomander" data-src="img/pomander6.jpg">
+                        <img class="mobil_img" src="img/pomander6.jpg"/>
+                     </div>
+                     <div class="f-carousel__slide" data-thumb-src="img/pomander7.jpg" data-fancybox="pomander" data-src="img/pomander7.jpg">
+                        <img class="mobil_img" src="img/pomander7.jpg"/>
+                     </div>
+                  </div>
                </div>
-
-               <a class="project__screen__box keylegal out" data-fancybox="project-keylegal" href="img/keylegal.jpg">
-                  <img src="img/keylegal.jpg" alt="">
-               </a>
-               <div style="display: none;">
-                  <a data-fancybox="project-keylegal" href="img/keylegal2.jpg">
-                     <img src="img/keylegal2.jpg" />
-                  </a>
-                  <a data-fancybox="project-keylegal" href="img/keylegal3.jpg">
-                     <img src="img/keylegal3.jpg" />
-                  </a>
-                  <a data-fancybox="project-keylegal" href="img/keylegal4.jpg">
-                     <img src="img/keylegal4.jpg" />
-                  </a>
-                  <a data-fancybox="project-keylegal" href="img/keylegal5.jpg">
-                     <img src="img/keylegal5.jpg" />
-                  </a>
-                  <a data-fancybox="project-keylegal" href="img/keylegal6.jpg">
-                     <img src="img/keylegal6.jpg" />
-                  </a>
-                  <a data-fancybox="project-keylegal" href="img/keylegal7.jpg">
-                     <img src="img/keylegal7.jpg" />
-                  </a>
+               <div class="project__screen__box mfm out">
+                  <div class="f-carousel" id="myCarousel3">
+                     <div class="f-carousel__slide" data-thumb-src="img/mfm.jpg" data-fancybox="mfm" data-src="img/mfm.jpg">
+                        <img src="img/mfm.jpg"/>
+                     </div>
+                     <div class="f-carousel__slide" data-thumb-src="img/mfm2.jpg" data-fancybox="mfm" data-src="img/mfm2.jpg">
+                        <img src="img/mfm2.jpg"/>
+                     </div>
+                     <div class="f-carousel__slide" data-thumb-src="img/mfm3.jpg" data-fancybox="mfm" data-src="img/mfm3.jpg">
+                        <img src="img/mfm3.jpg"/>
+                     </div>
+                     <div class="f-carousel__slide" data-thumb-src="img/mfm4.jpg" data-fancybox="mfm" data-src="img/mfm4.jpg">
+                        <img src="img/mfm4.jpg"/>
+                     </div>
+                     <div class="f-carousel__slide" data-thumb-src="img/mfm5.jpg" data-fancybox="mfm" data-src="img/mfm5.jpg">
+                        <img class="mobil_img" src="img/mfm5.jpg"/>
+                     </div>
+                  </div>
                </div>
-
-               <a class="project__screen__box news out" data-fancybox="news" href="img/news.jpg">
-                  <img src="img/news.jpg" alt="">
-                  <img class="mobile" src="img/news__mobile.png" alt="">
-               </a>
-               <div style="display: none;">
-                  <a data-fancybox="news" href="img/new2.jpg">
-                     <img src="img/new2.jpg" />
-                  </a>
-                  <a data-fancybox="news" href="img/news4.jpg">
-                     <img src="img/news4.jpg" />
-                  </a>
-                  <a data-fancybox="news" href="img/news3.jpg">
-                     <img src="img/news3.jpg" />
-                  </a>
-                  <a data-fancybox="news" href="img/news5.jpg">
-                     <img src="img/news5.jpg" />
-                  </a>
+               <div class="project__screen__box keylegal out">
+                  <div class="f-carousel" id="myCarousel4">
+                     <div class="f-carousel__slide" data-thumb-src="img/keylegal.jpg" data-fancybox="keylegal" data-src="img/keylegal.jpg">
+                        <img src="img/keylegal.jpg"/>
+                     </div>
+                     <div class="f-carousel__slide" data-thumb-src="img/keylegal2.jpg" data-fancybox="keylegal" data-src="img/keylegal2.jpg">
+                        <img src="img/keylegal2.jpg"/>
+                     </div>
+                     <div class="f-carousel__slide" data-thumb-src="img/keylegal3.jpg" data-fancybox="keylegal" data-src="img/keylegal3.jpg">
+                        <img src="img/keylegal3.jpg"/>
+                     </div>
+                     <div class="f-carousel__slide" data-thumb-src="img/keylegal4.jpg" data-fancybox="keylegal" data-src="img/keylegal4.jpg">
+                        <img src="img/keylegal4.jpg"/>
+                     </div>
+                     <div class="f-carousel__slide" data-thumb-src="img/keylegal5.jpg" data-fancybox="keylegal" data-src="img/keylegal5.jpg">
+                        <img class="mobil_img" src="img/keylegal5.jpg"/>
+                     </div>
+                     <div class="f-carousel__slide" data-thumb-src="img/keylegal6.jpg" data-fancybox="keylegal" data-src="img/keylegal6.jpg">
+                        <img class="mobil_img" src="img/keylegal6.jpg"/>
+                     </div>
+                     <div class="f-carousel__slide" data-thumb-src="img/keylegal7.jpg" data-fancybox="keylegal" data-src="img/keylegal7.jpg">
+                        <img class="mobil_img" src="img/keylegal7.jpg"/>
+                     </div>
+                  </div>
                </div>
-               <a class="project__screen__box todo out" data-fancybox="todo" href="img/todo.jpg">
-                  <img src="img/todo.jpg" alt="">
-                  <img class="mobile" src="img/todo__mobile.png" alt="">
-               </a>
-               <a class="project__screen__box convertor out" data-fancybox="convertisseur" href="img/convertisseur.jpg">
-                  <img src="img/convertisseur.jpg" alt="">
-                  <img class="mobile" src="img/convertor__mobil.png" alt="">
-               </a>
-               <a class="project__screen__box food52 out" data-fancybox="food52" href="img/food52_mail.jpg">
-                  <img src="img/food52_mail.jpg" alt="">
-                  <img class="mobile" src="img/food52__mobile.png" alt="">
-               </a>
+               <div class="project__screen__box news out">
+                  <div class="f-carousel" id="myCarousel5">
+                     <div class="f-carousel__slide" data-thumb-src="img/news.jpg" data-fancybox="news" data-src="img/news.jpg">
+                        <img src="img/news.jpg"/>
+                     </div>
+                     <div class="f-carousel__slide" data-thumb-src="img/news2.jpg" data-fancybox="news" data-src="img/news2.jpg">
+                        <img src="img/news2.jpg"/>
+                     </div>
+                     <div class="f-carousel__slide" data-thumb-src="img/news3.jpg" data-fancybox="news" data-src="img/news3.jpg">
+                        <img class="mobil_img" src="img/news3.jpg"/>
+                     </div>
+                     <div class="f-carousel__slide" data-thumb-src="img/news4.jpg" data-fancybox="news" data-src="img/news4.jpg">
+                        <img class="mobil_img" src="img/news4.jpg"/>
+                     </div>
+                     <div class="f-carousel__slide" data-thumb-src="img/news5.jpg" data-fancybox="news" data-src="img/news5.jpg">
+                        <img class="mobil_img" src="img/news5.jpg"/>
+                     </div>
+                  </div>
+               </div>
+               <div class="project__screen__box todo out">
+                  <div class="f-carousel" id="myCarousel6">
+                     <div class="f-carousel__slide" data-thumb-src="img/todo.jpg" data-fancybox="todo" data-src="img/todo.jpg">
+                        <img src="img/todo.jpg"/>
+                     </div>
+                     <div class="f-carousel__slide" data-thumb-src="img/todo_mobile.jpg" data-fancybox="todo" data-src="img/todo_mobile.jpg">
+                        <img class="mobil_img" src="img/todo_mobile.jpg"/>
+                     </div>
+                  </div>
+               </div>
+               <div class="project__screen__box convertor out">
+                  <div class="f-carousel" id="myCarousel7">
+                     <div class="f-carousel__slide" data-thumb-src="img/convertisseur.jpg" data-fancybox="convertor" data-src="img/convertisseur.jpg">
+                        <img src="img/convertisseur.jpg"/>
+                     </div>
+                     <div class="f-carousel__slide" data-thumb-src="img/convertisseur_mobile.jpg" data-fancybox="convertor" data-src="img/convertisseur_mobile.jpg">
+                        <img class="mobil_img" src="img/convertisseur_mobile.jpg"/>
+                     </div>
+                  </div>
+               </div>
+               <div class="project__screen__box food52 out">
+                  <div class="f-carousel" id="myCarousel8">
+                     <div class="f-carousel__slide" data-thumb-src="img/food52_mail.jpg" data-fancybox="food52" data-src="img/food52_mail.jpg">
+                        <img src="img/food52_mail.jpg"/>
+                     </div>
+                     <div class="f-carousel__slide" data-thumb-src="img/food52_mail_mobile.jpg" data-fancybox="food52" data-src="img/food52_mail_mobile.jpg">
+                        <img class="mobil_img" src="img/food52_mail_mobile.jpg"/>
+                     </div>
+                  </div>
+               </div>
+               <div class="project__screen__box portfolio out">
+                  <div class="f-carousel" id="myCarousel10">
+                     <div class="f-carousel__slide" data-thumb-src="img/portfolio.jpg" data-fancybox="portfolio" data-src="img/portfolio.jpg">
+                        <p class="portfolio_right v-fr isActive">
+                           Mon portfolio est conçu en tant qu'une page unique, où j'ai intégré des animations dynamiques pour passer du "home" à la section "mes projets" et avoir l'effet de passer d'une page à une autre.
+                        </p>
+                        <p class="portfolio_right v-engl">
+                           My portfolio is designed as a single-page website, where I've incorporated dynamic animations to transition from the 'home' to the 'my projects' section, creating the effect of moving from one page to another.
+                        </p>
+                        <img src="img/portfolio.jpg "/>
+                     </div>
+                     <div class="f-carousel__slide" data-thumb-src="img/fancyapps.jpg" data-fancybox="portfolio" data-src="img/fancyapps.jpg">
+                        <p class="portfolio_right v-fr isActive">
+                           Concernant la partie "mes projets," j'ai créé un swiper pour avoir un effet "aléatoire" sur la description des projets et ainsi avoir une animation plus vivante qu'un simple swiper. Pour les images, j'ai utilisé Fancybox et le Carousel de Fancyapps pour avoir l'effet au clic et le carrousel.
+                        </p>
+                        <p class="portfolio_right v-engl">
+                           Regarding the 'my projects' section, I've implemented a swiper to achieve a 'random' effect on project descriptions, adding a livelier animation than a standard swiper. For images, I've utilized Fancybox and Fancyapps' Carousel to provide the click effect and carousel functionality.
+                        </p>
+                        <img src="img/fancyapps.jpg "/>
+                     </div>
+                  </div>
+               </div>
             </div>
-            <i class="fa-solid fa-angle-right"></i>
+            <div class="next_prev_btn_wrapper">
+               <div class="next_prev_btn prev_btn isActive">
+                  <span>Prev</span>
+                  <i class="fa-solid fa-arrow-left"></i>
+               </div>
+               <div class="next_prev_btn next_btn">
+                  <i class="fa-solid fa-arrow-right"></i>
+                  <span>Next</span>
+               </div>
+            </div>
             <div class="project__tech">
-               <!-- <div class="bar bar__second"></div> -->
                <div class="tech__wrapper training">
                   <div class="tech__wrapper__img">
                      <img src="img/html-1.svg" alt="">
@@ -503,6 +651,13 @@
                      <img src="img/sass-1.svg" alt="">
                      <img src="img/javascript-1.svg" alt="">
                      <img src="img/gulp-1.svg" alt="">
+                  </div>
+               </div>
+               <div class="tech__wrapper out_tech dofus">
+                  <div class="tech__wrapper__img">
+                     <img src="img/html-1.svg" alt="">
+                     <img src="img/sass-1.svg" alt="">
+                     <img src="img/react-2.svg" alt="">
                   </div>
                </div>
                <div class="tech__wrapper out_tech pomander">
@@ -559,12 +714,23 @@
                      <img src="img/css-3.svg" alt="">
                   </div>
                </div>
+               <div class="tech__wrapper out_tech portfolio">
+                  <div class="tech__wrapper__img">
+                     <img src="img/html-1.svg" alt="">
+                     <img src="img/sass-1.svg" alt="">
+                     <img src="img/javascript-1.svg" alt="">
+                     <img src="img/gulp-1.svg" alt="">
+                  </div>
+               </div>
             </div>
          </div>
       </section>
    </main>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/carousel/carousel.thumbs.umd.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/carousel/carousel.umd.js"></script>
+
    <script src="js/main.min.js"></script>
 </body>
 
