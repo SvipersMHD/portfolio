@@ -248,6 +248,11 @@
                     display: flex;
                     flex-direction: column;
 
+                    p {
+                        font-size: 1.0rem;
+                        line-height: 30px;
+                    }
+
                     .mobile__title {
                         padding: 3% 0;
                         align-self: flex-end;
