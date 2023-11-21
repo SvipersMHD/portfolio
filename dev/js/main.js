@@ -2,19 +2,24 @@
 const debutChargement = new Date();
 
 window.addEventListener('load', () => {
-  // Enregistre l'heure une fois que tout le site est chargé
-  const finChargement = new Date();
-
-  // Calcule la durée de chargement en millisecondes
-  const dureeChargement = finChargement - debutChargement;
-
-  // Convertit la durée en secondes
-  const dureeEnSecondes = dureeChargement / 1000;
-
-  console.log(`Le site a été entièrement chargé en ${dureeEnSecondes} secondes.`);
-
-  const overlay = document.querySelector(".overlay");
-    overlay.remove()
+    // Enregistre l'heure une fois que tout le site est chargé
+    const finChargement = new Date();
+    
+    // Calcule la durée de chargement en millisecondes
+    const dureeChargement = finChargement - debutChargement;
+    
+    // Convertit la durée en secondes
+    const dureeEnSecondes = dureeChargement / 1000;
+    
+    console.log(`Le site a été entièrement chargé en ${dureeEnSecondes} secondes.`);
+    
+    const overlay = document.querySelector(".overlay");
+    
+    overlay.classList.add('hidden');
+    
+    overlay.addEventListener('transitionend', function() {
+        overlay.remove();
+    });
 });
 console.log("Eh non, il n'y a pas d'erreurs ! :D");
 const wavesL = [...document.querySelectorAll('.wave__left div')].reverse();

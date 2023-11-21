@@ -12,6 +12,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
 
     .loader {
         border: 6px solid #f3f3f3;
@@ -25,6 +27,9 @@
         0% { transform: rotate(0deg); }
         100% { transform: rotate(360deg); }
     }
+}
+.overlay.hidden {
+    opacity: 0;
 }
 .header {
     width: 95%;
