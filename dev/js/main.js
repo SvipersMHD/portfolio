@@ -12,6 +12,9 @@ window.addEventListener('load', () => {
   const dureeEnSecondes = dureeChargement / 1000;
 
   console.log(`Le site a été entièrement chargé en ${dureeEnSecondes} secondes.`);
+
+  const overlay = document.querySelector(".overlay");
+    overlay.remove()
 });
 console.log("Eh non, il n'y a pas d'erreurs ! :D");
 const wavesL = [...document.querySelectorAll('.wave__left div')].reverse();
