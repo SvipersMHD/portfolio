@@ -73,53 +73,53 @@ function goHome(){
     isPageHome = true
 }
 // Fonction pour l'animation du contenue de about me 
-function goToAboutMe(){
-    if(getBtnToAboutToggle){
-        gsap.to(aboutMe, {
-            y: 0, 
-            duration: 1.20, 
-            ease: "power4.out", 
-        })
-        gsap.to(toAboutTxt, {
-            y: -100 + "vh", 
-            duration: 1.20, 
-            ease: "power4.out", 
-        })
-        gsap.to(txtToUp, {
-            y : 0,
-            duration : 1.20,
-            ease : "power4.out"
-        })
-        } else {
-            gsap.to(aboutMe, {
-                y: 100 + "vh", 
-                duration: 1.20, 
-                ease: "power4.out", 
-            })
-            gsap.to(txtToUp, {
-                y : 100 + "vh",
-                duration : 1.20,
-                ease : "power4.in"
-            },">-1.7")
-            gsap.to(toAboutTxt, {
-                y: 0, 
-                duration: 1.20, 
-                ease : "power4.out",
-            },">-0.7")
-        }
-        getBtnToAboutToggle = !getBtnToAboutToggle
-}
-// Pour afficher le contenue de about me via le scroll
-window.addEventListener("wheel", (event) => {
-    if(isPageHome){
-        const delta = event.deltaY;
-        goToAboutMe()
-    }
-})
-// Pour afficher le contenue de about me via le btn
-btnToAbout.addEventListener(("click"),() => {
-    goToAboutMe()
-})
+// function goToAboutMe(){
+//     if(getBtnToAboutToggle){
+//         gsap.to(aboutMe, {
+//             y: 0, 
+//             duration: 1.20, 
+//             ease: "power4.out", 
+//         })
+//         gsap.to(toAboutTxt, {
+//             y: -100 + "vh", 
+//             duration: 1.20, 
+//             ease: "power4.out", 
+//         })
+//         gsap.to(txtToUp, {
+//             y : 0,
+//             duration : 1.20,
+//             ease : "power4.out"
+//         })
+//         } else {
+//             gsap.to(aboutMe, {
+//                 y: 100 + "vh", 
+//                 duration: 1.20, 
+//                 ease: "power4.out", 
+//             })
+//             gsap.to(txtToUp, {
+//                 y : 100 + "vh",
+//                 duration : 1.20,
+//                 ease : "power4.in"
+//             },">-1.7")
+//             gsap.to(toAboutTxt, {
+//                 y: 0, 
+//                 duration: 1.20, 
+//                 ease : "power4.out",
+//             },">-0.7")
+//         }
+//         getBtnToAboutToggle = !getBtnToAboutToggle
+// }
+// // Pour afficher le contenue de about me via le scroll
+// window.addEventListener("wheel", (event) => {
+//     if(isPageHome){
+//         const delta = event.deltaY;
+//         goToAboutMe()
+//     }
+// })
+// // Pour afficher le contenue de about me via le btn
+// btnToAbout.addEventListener(("click"),() => {
+//     goToAboutMe()
+// })
 
 // Fonction pour cacher les waves 
 function widthWaves(){

@@ -200,9 +200,10 @@
     position: relative;
     width: 50%;
     font-family: $font;
-    overflow: hidden;
+    overflow: scroll;
     
     .presentation {
+        padding: 100px 0 75px;
         
         .presentation__txt {
             width: 90%;
@@ -217,7 +218,7 @@
                 display: flex;
                 flex-direction: column;
                 justify-content: center;   
-                height: 100vh;
+                // height: 100vh;
                 scroll-snap-align: start;
                 
                 p {
@@ -268,18 +269,14 @@
                 }
             }
             .aboutme__presentation__txt {
-                // display: none;
-                position: absolute;
-                width: 90%;
-                background: $blanc;
-                transform: translateY(200vh);
+                width: 100%;
 
                 .aboutme__wrapper {
                     display: flex;
                     flex-direction: column;
 
                     p {
-                        font-size: 1.0rem;
+                        font-size: 1.20rem;
                         line-height: 30px;
                     }
 
@@ -289,84 +286,6 @@
                         @include selec;
                     }
                 }
-            }
-            .btnToAbout_wrapper {
-                align-self: flex-end;
-                position: absolute;
-                bottom: -25px;
-
-            }
-            .btnToAbout {
-                position: relative;
-                color: white;
-                background: black;
-                padding: 30px 50px 55px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                max-width: 235px;
-                cursor: pointer;
-                border-radius: 32px 32px 0 0 ;
-                z-index: 150;
-                transition: .3s all ease-in-out;
-                overflow: hidden;
-
-            }
-            .btnToAboutBorder {
-                position: absolute;
-                z-index: 10;
-                width: calc(235px + 6px); 
-                height: calc(200px + 4px); 
-                top: -4px;
-                left: -4px;
-                transition: .3s all ease-in-out;
-                // background: linear-gradient(
-                //     60deg,
-                //     hsl(224, 85%, 66%),
-                //     hsl(269, 85%, 66%),
-                //     hsl(314, 85%, 66%),
-                //     hsl(359, 85%, 66%),
-                //     hsl(44, 85%, 66%),
-                //     hsl(89, 85%, 66%),
-                //     hsl(134, 85%, 66%),
-                //     hsl(179, 85%, 66%)
-                //   );
-                background: linear-gradient(
-                    90deg,
-                    white,
-                    black,
-                    white,
-                );
-                background-size: 300% 300%;
-                background-position: 0 50%;
-                border-radius: 32px 32px 0 0 ;
-                animation: moveGradient 4s alternate infinite ease-in-out;
-            }
-            @keyframes moveGradient {
-                50% {
-                    background-position: 100% 0%;
-                }
-            }
-            .toUpTxt {
-                position: absolute;
-                top: 0;
-                padding: 25px 0;
-                transform: translateY(100vh);
-                font-size: 30px;
-            }
-            .btnToAbout_wrapper:hover .btnToAbout {
-                color: black;
-                background: $blanc;
-                transform: translateY(-25px);
-            }
-            .btnToAbout_wrapper:hover .btnToAboutBorder {
-                transform: translateY(-25px);
-            }
-            .toAboutTxt {
-                font-weight: bold;
-            }
-            .btnToAbout:hover .toUpTxt .fa-arrow-down {
-                color: black;
             }
         }
     }
@@ -453,17 +372,6 @@ text {
             text-align: center;
         }
     }
-    .aboutme__presentation__txt {
-        position: relative !important;
-        transform: translateY(0) !important;
-        width: 100% !important;
-    }
-    .presentation__txt {
-        gap: 50px;
-    }
-    .btnToAbout_wrapper {
-        display: none !important;
-    }
 
 }
 @media screen and (max-width:1000px) {
@@ -489,6 +397,10 @@ text {
         justify-content: center;
         align-items: center;
         padding: 50px 0;
+
+        .presentation {
+            padding: 0;
+        }
         
         .presentation, h1 {
             width: 100%;
@@ -502,9 +414,6 @@ text {
                 height: auto;
                 padding: 7% 0;
 
-                .backtotop, .aboutme {
-                    display: none;
-                }
                 .first__section__presentation__txt, .aboutme__presentation__txt {
                     scroll-snap-align: none;
                     height: auto;
