@@ -262,9 +262,14 @@
                             }
                         }
                     }
+                    .role__photo__img__wrapper {
+                        width: 45%;
+                        user-select: none;
+                    }
                     img {
                         display: block;
-                        width: 45%;
+                        width: 100%;
+                        border-radius: 5px;
                     }
                 }
             }

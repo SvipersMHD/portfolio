@@ -174,12 +174,12 @@
             font-size: $ff-h3;
             font-family: $font;
             margin: 0;
-            padding: 0 0 40px;
+            padding: 0;
             @include selec;
         }
         .projet__description {
             width: 100%;
-            padding: 20px 0 50px;
+            padding: 40px 0 40px;
             
             p {
                 line-height: 25px;
@@ -246,6 +246,9 @@
     .out {
         position: fixed;
         // width: 40%;
+    }
+    .training {
+        transform: translateX(-200vw);
     }
     .dofus {
         transform: translateY(-200vh);
@@ -338,6 +341,32 @@
         border-color: #6a6868;
     }
 }
+@media screen and (max-width : 1400px) {
+    .project {
+        
+        .project__txt {
+
+            .project__txt__wrapper.afop {
+                height: 70vh;
+            }
+        }
+    }
+}
+@media screen and (max-width : 990px) {
+    .project {
+        
+        .project__txt {
+
+            .project__txt__wrapper.afop {
+                height: 85vh;
+
+                .projet__description {
+                    padding: 20px 0;
+                }
+            }
+        }
+    }
+}
 @media screen and (max-width : 900px) {
     .project {
         flex-direction: column;
@@ -347,14 +376,17 @@
     }
     .project__txt {
         margin: 0;
-        height: 95vh;
+        min-height: 95vh;
         
         .project__txt__wrapper {
             width: 90%;
 
             h3 {
-                padding: 50px 0 20px;
+                padding: 0 ;
             }
+        }
+        .project__txt__wrapper.afop {
+            height: 50vh !important;
         }
         .centered {
             position: sticky;
@@ -431,6 +463,39 @@
 
         img {
             min-width: 35px !important;
+        }
+    }
+}
+@media screen and (max-width : 485px) {
+    .project {
+        
+        .project__txt {
+
+            .project__txt__wrapper.afop {
+                height: 70vh !important;
+
+                .projet__description {
+                    padding: 5px 0;
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width : 375px) {
+    .project {
+        
+        .project__txt {
+
+            .project__txt__wrapper.afop {
+                height: 75vh !important;
+
+                .projet__description {
+                    padding: 5px 0;
+                }
+                .unavailable_text {
+                    display: none;
+                }
+            }
         }
     }
 }

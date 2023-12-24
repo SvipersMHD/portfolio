@@ -21,7 +21,7 @@ window.addEventListener('load', () => {
         overlay.remove();
     });
 });
-console.log("Eh non, il n'y a pas d'erreurs ! :D");
+
 const wavesL = [...document.querySelectorAll('.wave__left div')].reverse();
 const wavesR = document.querySelectorAll('.wave__right div');
 const wavesLWrapper = document.querySelector('.wave__left');
@@ -35,12 +35,6 @@ const project = document.querySelector('.project');
 const home = document.querySelector('.home');
 const header = document.querySelector('.header');
 const homebtn = document.querySelector('.project__btn__home');
-
-const aboutMe = document.querySelector('.aboutme__presentation__txt');
-const btnToAbout = document.querySelector('.btnToAbout');
-const btnToMe = document.querySelector('.btnToMe');
-const toAboutTxt = document.querySelector('.toAboutTxt');
-const txtToUp = document.querySelector('.toUpTxt');
 
 const linkToEnglish = document.querySelector(".eng");
 const linkToFrench = document.querySelector(".fran");
@@ -72,54 +66,6 @@ function goHome(){
     }, 1000);
     isPageHome = true
 }
-// Fonction pour l'animation du contenue de about me 
-// function goToAboutMe(){
-//     if(getBtnToAboutToggle){
-//         gsap.to(aboutMe, {
-//             y: 0, 
-//             duration: 1.20, 
-//             ease: "power4.out", 
-//         })
-//         gsap.to(toAboutTxt, {
-//             y: -100 + "vh", 
-//             duration: 1.20, 
-//             ease: "power4.out", 
-//         })
-//         gsap.to(txtToUp, {
-//             y : 0,
-//             duration : 1.20,
-//             ease : "power4.out"
-//         })
-//         } else {
-//             gsap.to(aboutMe, {
-//                 y: 100 + "vh", 
-//                 duration: 1.20, 
-//                 ease: "power4.out", 
-//             })
-//             gsap.to(txtToUp, {
-//                 y : 100 + "vh",
-//                 duration : 1.20,
-//                 ease : "power4.in"
-//             },">-1.7")
-//             gsap.to(toAboutTxt, {
-//                 y: 0, 
-//                 duration: 1.20, 
-//                 ease : "power4.out",
-//             },">-0.7")
-//         }
-//         getBtnToAboutToggle = !getBtnToAboutToggle
-// }
-// // Pour afficher le contenue de about me via le scroll
-// window.addEventListener("wheel", (event) => {
-//     if(isPageHome){
-//         const delta = event.deltaY;
-//         goToAboutMe()
-//     }
-// })
-// // Pour afficher le contenue de about me via le btn
-// btnToAbout.addEventListener(("click"),() => {
-//     goToAboutMe()
-// })
 
 // Fonction pour cacher les waves 
 function widthWaves(){
@@ -250,9 +196,42 @@ linkToFrench.addEventListener("click", () => {
         }, 1000);
     }
 });
+
+// fonction pour le random img 
+const photoWrapper = document.querySelector(".role__photo__img__wrapper")
+
+const imgRandom = {
+    img1 : "./img/photo_profil.png",
+    img2 : "./img/photo_profil3.jpg",
+}
+function getRandomIndex(max) {
+    return Math.floor(Math.random() * max);
+}
+console.log(getRandomIndex(2));
+function getRandomImg() {
+    window.addEventListener("load", () => {
+        const randomIndex = getRandomIndex(2); 
+        
+        let imgBalise;
+        
+        if (randomIndex === 0) {
+            imgBalise = `<img src="${imgRandom.img1}" alt="">`;
+        } else {
+            imgBalise = `<img src="${imgRandom.img2}" alt="">`;
+        }
+        
+        photoWrapper.innerHTML = imgBalise;
+    });
+}
+getRandomImg()
+
 // Partie project animation 
 const slideLeft = document.querySelector(".prev_btn")
 const slideRight = document.querySelector(".next_btn")
+
+const afopTxt = document.querySelector(".project__txt .afop")
+const afopImg = document.querySelector(".project__screen .afop")
+const afopTech = document.querySelector(".project__tech .afop")
 
 const trainingTxt = document.querySelector(".project__txt .training")
 const trainingImg = document.querySelector(".project__screen .training")
@@ -368,6 +347,15 @@ function animationTexteX(txtOld,slidingFrom,txtNew,slidingReverse){
 
 // tableau avec chaque projet 
 const actions = [
+    {
+        pos: "x",
+        textActif: afopTxt,
+        textActifPos: 200,
+        textNextPos: 0,
+        textReversePos: -200,
+        img: afopImg,
+        tech: afopTech
+    },
     {
         pos: "y",
         textActif: trainingTxt,
@@ -630,6 +618,15 @@ new Carousel(
     );
 new Carousel(
     document.getElementById('myCarousel10'),
+    {
+        Dots: false,
+    },
+    {
+        Thumbs,
+    }
+    );
+new Carousel(
+    document.getElementById('myCarousel11'),
     {
         Dots: false,
     },
