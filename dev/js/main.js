@@ -207,7 +207,7 @@ const imgRandom = {
 function getRandomIndex(max) {
     return Math.floor(Math.random() * max);
 }
-console.log(getRandomIndex(2));
+// console.log(getRandomIndex(2));
 function getRandomImg() {
     window.addEventListener("load", () => {
         const randomIndex = getRandomIndex(2); 
